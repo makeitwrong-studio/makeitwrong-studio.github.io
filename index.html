@@ -1,24 +1,36 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Make It Wrong Studio</title>
+<meta name="description" content="Make It Wrong Studio makes small, colorful mobile games: Eagle Eye: Spot the Difference and Little Paws.">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#fff7f0;--fg:#173041;--muted:#566f7a;--accent:#e2562f;--card:#fff;--line:#f0dccd}
-@media (prefers-color-scheme: dark){:root{--bg:#0f2029;--fg:#e8f4f1;--muted:#a3bcc5;--accent:#ff8a5c;--card:#163240;--line:#2a4a58}}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0f2029;--fg:#e8f4f1;--muted:#a3bcc5;--accent:#ff8a5c;--card:#163240;--line:#2a4a58;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f2029;--fg:#e8f4f1;--muted:#a3bcc5;--accent:#ff8a5c;--card:#163240;--line:#2a4a58;color-scheme:dark}
 body{margin:0;background:var(--bg);color:var(--fg);font-family:'Poppins',system-ui,sans-serif;line-height:1.6;padding:0 max(16px,env(safe-area-inset-left))}
 main{max-width:680px;margin:0 auto;padding:56px 0 64px}
 .eyebrow{color:var(--accent);font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:.8rem}
 h1{font-size:clamp(2rem,6vw,2.8rem);line-height:1.1;margin:.2em 0 .4em}
-.game{display:flex;gap:18px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;margin:28px 0}
+.label{color:var(--muted);font-weight:600;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;margin:40px 0 0}
+.game{display:flex;gap:18px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;margin:16px 0}
 .game img{width:84px;height:84px;border-radius:20px;flex:none}
 .game h2{margin:0;font-size:1.15rem}.game p{margin:4px 0 8px;color:var(--muted)}
 a{color:var(--accent);font-weight:600}
 footer{color:var(--muted);font-size:.9rem;margin-top:40px}
+@media (max-width:420px){.game{align-items:flex-start}.game img{width:64px;height:64px;border-radius:16px}}
 </style></head><body><main>
 <div class="eyebrow">Independent game studio</div>
 <h1>Make It Wrong Studio</h1>
 <p>We make small, colorful mobile games that are easy to pick up and fun to finish.</p>
+
+<p class="label">Our games</p>
+
 <div class="game"><img src="eagle-eye/icon.png" alt="Eagle Eye app icon">
 <div><h2>Eagle Eye: Spot the Difference</h2><p>300 levels across 50 colorful scenes. Find every difference before time runs out.</p>
 <a href="eagle-eye/privacy.html">Privacy Policy</a></div></div>
-<footer>Contact: makeitwrong.studio@gmail.com</footer>
+
+<div class="game"><img src="little-paws/icon.svg" alt="Little Paws app icon">
+<div><h2>Little Paws</h2><p>Raise and collect 100 adorable cat breeds. Your cats nap, wander and earn paws you can spend to discover new friends, from Common all the way to Super Rare.</p>
+<a href="little-paws/privacy.html">Privacy Policy</a></div></div>
+
+<footer>Contact: <a href="mailto:makeitwrong.studio@gmail.com">makeitwrong.studio@gmail.com</a></footer>
 </main></body></html>

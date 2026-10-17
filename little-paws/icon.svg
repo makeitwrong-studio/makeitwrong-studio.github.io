@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<rect width="512" height="512" rx="0" fill="#ffd9c2"/>
+<circle cx="256" cy="300" r="210" fill="#ffe8d9"/>
+<polygon points="150,190 170,95 230,160" fill="#f5a35c"/>
+<polygon points="362,190 342,95 282,160" fill="#f5a35c"/>
+<polygon points="168,170 178,122 210,158" fill="#ffc3cf"/>
+<polygon points="344,170 334,122 302,158" fill="#ffc3cf"/>
+<path d="M256 140 C 360 140 400 230 410 330 C 420 410 360 430 256 430 C 152 430 92 410 102 330 C 112 230 152 140 256 140 Z" fill="#f5a35c"/>
+<path d="M190 300 Q 210 318 230 300" stroke="#3a2a22" stroke-width="10" fill="none" stroke-linecap="round"/>
+<path d="M282 300 Q 302 318 322 300" stroke="#3a2a22" stroke-width="10" fill="none" stroke-linecap="round"/>
+<ellipse cx="180" cy="340" rx="22" ry="13" fill="#ff8fa6" opacity="0.7"/>
+<ellipse cx="332" cy="340" rx="22" ry="13" fill="#ff8fa6" opacity="0.7"/>
+<path d="M246 332 L266 332 L256 342 Z" fill="#e2562f"/>
+<path d="M256 342 Q 246 356 236 350 M256 342 Q 266 356 276 350" stroke="#3a2a22" stroke-width="6" fill="none" stroke-linecap="round"/>
+<path d="M230 180 Q 256 200 282 180" stroke="#e08a40" stroke-width="10" fill="none" stroke-linecap="round"/>
+<text x="380" y="150" font-family="sans-serif" font-weight="bold" font-size="54" fill="#6b5cff">Z</text>
+<text x="420" y="100" font-family="sans-serif" font-weight="bold" font-size="38" fill="#6b5cff">z</text>
+</svg>
