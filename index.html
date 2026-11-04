@@ -9,7 +9,9 @@
 body{margin:0;background:var(--bg);color:var(--fg);font-family:'Poppins',system-ui,sans-serif;line-height:1.6;padding:0 max(16px,env(safe-area-inset-left))}
 main{max-width:680px;margin:0 auto;padding:56px 0 64px}
 .eyebrow{color:var(--accent);font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:.8rem}
-h1{font-size:clamp(2rem,6vw,2.8rem);line-height:1.1;margin:.2em 0 .4em}
+h1.sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.intro{position:relative;aspect-ratio:16/9;background:#0b1530;border-radius:20px;overflow:hidden;margin:14px 0 22px;box-shadow:0 10px 30px rgba(11,21,48,.18)}
+.intro video{display:block;width:100%;height:100%;object-fit:cover;pointer-events:none}
 .label{color:var(--muted);font-weight:600;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;margin:40px 0 0}
 .game{display:flex;gap:18px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;margin:16px 0}
 .game img{width:84px;height:84px;border-radius:20px;flex:none}
@@ -24,7 +26,8 @@ footer{color:var(--muted);font-size:.9rem;margin-top:40px}
 </style></head><body><main>
 <a class="brand" href="./" aria-label="Make It Wrong Studio">MAKE IT W<span class="r">R</span>ONG</a>
 <div class="eyebrow" style="margin-top:22px">Independent game studio</div>
-<h1>Make It Wrong Studio</h1>
+<h1 class="sr">Make It Wrong Studio</h1>
+<div class="intro"><video id="intro" muted autoplay playsinline preload="auto" disablepictureinpicture disableremoteplayback aria-label="Make It Wrong Studio intro: the letters MAKE IT WRONG drop in, the R turns orange and flips, a red STUDIO stamp lands, then Independent game studio appears"><source src="media/studio-intro.mp4" type="video/mp4"><source src="media/studio-intro.webm" type="video/webm"></video></div>
 <p>We make small, colorful mobile games that are easy to pick up and fun to finish.</p>
 
 <p class="label">Our games</p>
@@ -44,4 +47,12 @@ footer{color:var(--muted);font-size:.9rem;margin-top:40px}
 <span class="links"><a href="leo-trixie/">Channel page</a><a href="https://www.youtube.com/@Leo_Trixie.Adventures">Watch on YouTube</a></span></div></div>
 
 <footer>Contact: <a href="mailto:makeitwrong.studio@gmail.com">makeitwrong.studio@gmail.com</a></footer>
-</main></body></html>
+</main>
+<script>
+(function(){var v=document.getElementById('intro');if(!v)return;var end='media/studio-intro-end.jpg';
+function still(){v.removeAttribute('autoplay');v.pause();v.poster=end;}
+try{if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){still();return;}}catch(e){}
+var p=v.play();if(p&&p.catch)p.catch(still);
+v.addEventListener('error',still,true);})();
+</script>
+</body></html>
