@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Spirit Seal: Beast Guardians · Make It Wrong Studio</title>
+<meta name="description" content="Spirit Seal: Beast Guardians (Linh Thú Hộ Trận): summon Spirit Beasts and guard the Sacred Shrine. Coming soon to Android. A game by Make It Wrong Studio.">
+<link rel="canonical" href="https://makeitwrong-studio.github.io/beast-guardians/">
+<link rel="icon" href="icon.png">
+<meta property="og:image" content="https://makeitwrong-studio.github.io/beast-guardians/cover.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff7f0;--fg:#173041;--muted:#566f7a;--accent:#e2562f;--card:#fff;--line:#f0dccd;--gold:#b7731d}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0f2029;--fg:#e8f4f1;--muted:#a3bcc5;--accent:#ff8a5c;--card:#163240;--line:#2a4a58;--gold:#ffc46b;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f2029;--fg:#e8f4f1;--muted:#a3bcc5;--accent:#ff8a5c;--card:#163240;--line:#2a4a58;--gold:#ffc46b;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:'Poppins',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.65;padding:0 max(16px,env(safe-area-inset-left)) 0 max(16px,env(safe-area-inset-right))}
+main{max-width:720px;margin:0 auto;padding:28px 0 64px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:inline-flex;align-items:center;background:#173041;color:#fff;border-radius:12px;padding:8px 14px;font-weight:700;letter-spacing:.08em;font-size:.9rem;text-decoration:none;line-height:1.2;box-shadow:0 0 0 1px rgba(255,255,255,.08)}
+.brand .r{display:inline-block;transform:scaleX(-1);color:#ff7a45}
+.back{font-size:.9rem;color:var(--accent);font-weight:600}
+.app{display:flex;align-items:center;gap:14px;margin:26px 0 14px}
+.app img{width:72px;height:72px;border-radius:18px;flex:none}
+h1{font-size:clamp(1.6rem,5vw,2.2rem);line-height:1.15;margin:0}
+.sub{color:var(--muted);font-size:.95rem}
+.hero{width:100%;border-radius:20px;display:block;margin:6px 0 4px;height:auto}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+.btn.soon{display:inline-block;padding:10px 18px;border-radius:999px;background:transparent;color:var(--muted);border:2px dashed var(--line);font-weight:600}
+section{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:6px 22px 18px;margin:18px 0}
+h2{font-size:1.15rem;margin:16px 0 6px}
+p{margin:6px 0}
+.hook{font-weight:700;color:var(--gold);letter-spacing:.02em}
+a{color:var(--accent);font-weight:600}
+.label{font-size:1.15rem;margin:34px 0 4px}
+.meta{color:var(--muted);font-size:.9rem;margin:0 0 14px}
+.deck{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (min-width:560px){.deck{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:700px){.deck{grid-template-columns:repeat(5,minmax(0,1fr))}}
+.tc{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:2/3;min-width:0;transition:transform .25s ease;animation:rise .6s both;animation-delay:calc(var(--i)*70ms)}
+.tc img{display:block;width:100%;height:100%;object-fit:cover}
+.tc::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.35) 48%,transparent 60%);transform:translateX(-120%);animation:shine 5s ease-in-out infinite;animation-delay:calc(var(--i)*.45s + 1s)}
+.tc:hover{transform:translateY(-6px) rotate(-1deg)}
+@keyframes shine{0%,70%{transform:translateX(-120%)}85%,100%{transform:translateX(120%)}}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.tc,.tc::after{animation:none}.tc::after{display:none}.tc:hover{transform:none}}
+.teaser{display:grid;gap:8px;grid-template-columns:repeat(3,minmax(0,1fr));text-align:center;margin:10px 0 4px}
+.teaser div{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:12px 6px}
+.teaser b{display:block;font-size:1.5rem;line-height:1.1;color:var(--accent)}
+.teaser span{font-size:.82rem;color:var(--muted)}
+.more{text-align:center;color:var(--muted);font-size:.95rem;margin:18px 0 0}
+footer{color:var(--muted);font-size:.88rem;text-align:center;margin-top:34px}
+</style>
+</head><body><main>
+<div class="top"><a class="back" href="../">← Make It Wrong Studio</a><a class="brand" href="../" aria-label="Make It Wrong Studio">MAKE IT W<span class="r">R</span>ONG</a></div>
+<div class="app"><img src="icon.png" alt="Spirit Seal: Beast Guardians app icon"><div><h1>Spirit Seal: Beast Guardians</h1><div class="sub">Linh Thú Hộ Trận · Make It Wrong Studio</div></div></div>
+<img class="hero" src="cover.jpg" alt="Spirit Seal: Beast Guardians · Coming soon · Sắp ra mắt" width="1280" height="625">
+<div class="btns"><span class="btn soon">Sắp ra mắt trên Google Play · Coming soon</span></div>
+
+<section lang="vi"><h2>Đền Thiêng đang chờ người hộ trận</h2>
+<p>Bên kia màn sương Rừng Trúc, Cổng U Minh đã hé mở. Ma tộc đang tập hợp, và chúng không đánh bừa: chúng rình đường trận yếu nhất, chờ đúng lúc bạn sơ hở.</p>
+<p>Những Linh thú đầu tiên đã đáp lời triệu hồi, và còn nhiều nữa đang trên đường tới. Ai sẽ đứng tiền tuyến, ai sẽ giữ đền?</p>
+<p class="hook">Hai ngôi đền. Những đường trận rực lửa. Một trận chiến không ngơi nghỉ.</p></section>
+<section lang="en"><h2>The Sacred Shrine needs its guardians</h2>
+<p>Beyond the misty bamboo forest, the Netherworld Gate has cracked open. The Demon Clan is gathering, and they don't fight blindly: they hunt for your weakest lane and wait for the moment you slip.</p>
+<p>The first Spirit Beasts have answered the call, and many more are on their way. Who holds the front line? Who guards the shrine?</p>
+<p class="hook">Two shrines. Lanes of fire. One battle that never rests.</p></section>
+<div class="teaser"><div><b>2–3</b><span>đường trận · lanes</span></div><div><b>6</b><span>hệ · elements</span></div><div><b>10+</b><span>Linh thú · beasts</span></div></div>
+
+<h2 class="label">Mười lá bài đầu tiên · The first ten cards</h2>
+<p class="meta">Mỗi Linh thú một lá bài, mỗi lá bài một sức mạnh. · One beast, one card, one power.</p>
+<div class="deck">
+<div class="tc" style="--i:0"><img src="img/card_loc_non.webp" alt="Lá bài Lộc Non" width="440" height="660" loading="lazy"></div>
+<div class="tc" style="--i:1"><img src="img/card_cu_than.webp" alt="Lá bài Cú Than" width="440" height="660" loading="lazy"></div>
+<div class="tc" style="--i:2"><img src="img/card_rai_ca_song.webp" alt="Lá bài Rái Cá Sóng" width="440" height="660" loading="lazy"></div>
+<div class="tc" style="--i:3"><img src="img/card_voi_dat_set.webp" alt="Lá bài Voi Đất Sét" width="440" height="660" loading="lazy"></div>
+<div class="tc" style="--i:4"><img src="img/card_soi_bac.webp" alt="Lá bài Sói Bạc" width="440" height="660" loading="lazy"></div>
+<div class="tc" style="--i:5"><img src="img/card_oc_reu.webp" alt="Lá bài Ốc Rêu" width="440" height="660" loading="lazy"></div>
+<div class="tc" style="--i:6"><img src="img/card_chuot_than.webp" alt="Lá bài Chuột Than" width="440" height="660" loading="lazy"></div>
+<div class="tc" style="--i:7"><img src="img/card_ca_chep_may.webp" alt="Lá bài Cá Chép Mây" width="440" height="660" loading="lazy"></div>
+<div class="tc" style="--i:8"><img src="img/card_te_te_soi.webp" alt="Lá bài Te Te Sỏi" width="440" height="660" loading="lazy"></div>
+<div class="tc" style="--i:9"><img src="img/card_ve_dong.webp" alt="Lá bài Ve Đồng" width="440" height="660" loading="lazy"></div>
+</div>
+<p class="more">Đây mới chỉ là khởi đầu. Còn nhiều Linh thú đang chờ được triệu hồi…<br><span lang="en">This is only the beginning. More Spirit Beasts are waiting to be summoned…</span></p>
+
+<p class="meta" style="text-align:center;margin-top:28px">Cùng thế giới với <a href="../spiritsealchronicles/">Spirit Seal Chronicles</a>. Theo dõi Make It Wrong Studio để biết ngày ra mắt. · Same world as Spirit Seal Chronicles. Follow Make It Wrong Studio for the launch date.<br>Liên hệ / Contact: <a href="mailto:makeitwrong.studio@gmail.com">makeitwrong.studio@gmail.com</a></p>
+<footer>© 2026 Make It Wrong Studio</footer>
+</main></body></html>

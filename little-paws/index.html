@@ -1,55 +1,212 @@
 <!doctype html>
-<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Little Paws · Make It Wrong Studio</title>
-<meta name="description" content="Little Paws: raise and collect 100 cute cat breeds. A cozy cat collector game by Make It Wrong Studio.">
+<html lang="vi" data-l="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Little Paws: Cat Collector · Make It Wrong Studio</title>
+<meta name="description" content="Little Paws: raise and collect 100 adorable cat breeds in 339 coat colors, decorate 20 cozy rooms and hunt sparkling Super Rare cats. Free on Google Play, by Make It Wrong Studio.">
 <link rel="canonical" href="https://makeitwrong-studio.github.io/little-paws/">
 <link rel="icon" href="icon.png">
+<meta property="og:title" content="Little Paws: Cat Collector">
+<meta property="og:description" content="Raise and collect 100 adorable cat breeds. A cozy cat collector game by Make It Wrong Studio.">
+<meta property="og:image" content="https://makeitwrong-studio.github.io/little-paws/img/feature_en.jpg">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>(function(){var l;try{l=localStorage.getItem('lp-lang')}catch(e){}if(l!=='vi'&&l!=='en'){l=(navigator.language||'').toLowerCase().indexOf('vi')===0?'vi':'en'}document.documentElement.setAttribute('data-l',l);document.documentElement.lang=l})();</script>
 <style>
-:root{--bg:#fff7f0;--fg:#173041;--muted:#566f7a;--accent:#e2562f;--card:#fff;--line:#f0dccd;--pink:#e8578a}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0f2029;--fg:#e8f4f1;--muted:#a3bcc5;--accent:#ff8a5c;--card:#163240;--line:#2a4a58;--pink:#ff8fb1;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#0f2029;--fg:#e8f4f1;--muted:#a3bcc5;--accent:#ff8a5c;--card:#163240;--line:#2a4a58;--pink:#ff8fb1;color-scheme:dark}
+:root{--bg:#fff7f0;--fg:#173041;--muted:#566f7a;--accent:#e2562f;--card:#fff;--line:#f0dccd;--pink:#e8578a;--soft:#ffeee2;--royal:#2a1d4a;--gold:#f4c766}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0f2029;--fg:#e8f4f1;--muted:#a3bcc5;--accent:#ff8a5c;--card:#163240;--line:#2a4a58;--pink:#ff8fb1;--soft:#1b3a48;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f2029;--fg:#e8f4f1;--muted:#a3bcc5;--accent:#ff8a5c;--card:#163240;--line:#2a4a58;--pink:#ff8fb1;--soft:#1b3a48;color-scheme:dark}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:'Poppins',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.65;padding:0 max(16px,env(safe-area-inset-left))}
-main{max-width:720px;margin:0 auto;padding:28px 0 64px}
+img{max-width:100%;height:auto}
+html[data-l="vi"] .en,html[data-l="en"] .vi{display:none!important}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:'Poppins',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.65;padding:0 max(16px,env(safe-area-inset-left)) 0 max(16px,env(safe-area-inset-right))}
+main{max-width:960px;margin:0 auto;padding:24px 0 64px}
+a{color:var(--accent);font-weight:600}
 .top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .brand{display:inline-flex;align-items:center;background:#173041;color:#fff;border-radius:12px;padding:8px 14px;font-weight:700;letter-spacing:.08em;font-size:.9rem;text-decoration:none;line-height:1.2;box-shadow:0 0 0 1px rgba(255,255,255,.08)}
 .brand .r{display:inline-block;transform:scaleX(-1);color:#ff7a45}
-.back{font-size:.9rem;color:var(--accent);font-weight:600}
-.app{display:flex;align-items:center;gap:14px;margin:26px 0 14px}
-.app img{width:72px;height:72px;border-radius:18px;flex:none}
-h1{font-size:clamp(1.7rem,5vw,2.3rem);line-height:1.15;margin:0}
-.sub{color:var(--muted);font-size:.95rem}
-.hero{width:100%;border-radius:20px;display:block;margin:6px 0 4px}
-section{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:6px 22px 18px;margin:18px 0}
-h2{font-size:1.15rem;margin:16px 0 6px}
-h3{font-size:1rem;margin:18px 0 4px}
-p,li{margin:6px 0}
-ul{padding-left:1.2em}
-a{color:var(--accent);font-weight:600}
-.btns{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
-.btn{display:inline-block;padding:10px 18px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none}
-.btn.soon{background:var(--card);color:var(--muted);border:2px dashed var(--line);cursor:default}
-.btn.alt{background:transparent;color:var(--accent);border:2px solid var(--accent)}
-.lang{display:flex;gap:14px;margin:8px 0 0}
-.meta{color:var(--muted);font-size:.9rem}
-.table{overflow-x:auto}
-table{border-collapse:collapse;width:100%;font-size:.9rem;margin:8px 0}
-th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
-th{color:var(--muted);font-weight:600}
-footer{color:var(--muted);font-size:.88rem;text-align:center;margin-top:34px}
+.back{font-size:.9rem}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--card)}
+.lang button{font:600 .8rem 'Poppins',sans-serif;border:0;background:none;color:var(--muted);padding:6px 12px;cursor:pointer}
+html[data-l="vi"] .lang [data-set="vi"],html[data-l="en"] .lang [data-set="en"]{background:var(--accent);color:#fff}
+.right{display:flex;gap:10px;align-items:center}
+/* app header like a store page */
+.app{display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:center;margin:28px 0 18px}
+.app img{width:96px;height:96px;border-radius:22px;box-shadow:0 6px 18px rgba(23,48,65,.15)}
+h1{font-size:clamp(1.6rem,5vw,2.4rem);line-height:1.12;margin:0}
+.dev{color:var(--accent);font-weight:600;font-size:.95rem;margin-top:2px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.tag{font-size:.78rem;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--card)}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin:4px 0 22px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none}
+.btn svg{width:18px;height:18px}
+.btn.alt{background:transparent;color:var(--accent);border:2px solid var(--accent);padding:9px 18px}
+.hero{width:100%;aspect-ratio:1024/500;border-radius:22px;display:block;object-fit:cover;box-shadow:0 10px 30px rgba(23,48,65,.12)}
+.lead{font-size:1.12rem;font-weight:600;margin:26px 0 6px;max-width:62ch;text-wrap:pretty}
+.intro{color:var(--muted);max-width:66ch;margin:0}
+/* screenshot strip */
+.strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 14px;margin:22px 0 8px;scrollbar-width:thin}
+.strip button{flex:0 0 auto;width:min(42vw,180px);padding:0;border:0;background:none;cursor:zoom-in;scroll-snap-align:start;border-radius:14px}
+.strip img{width:100%;aspect-ratio:9/16;border-radius:14px;display:block;box-shadow:0 4px 14px rgba(23,48,65,.14)}
+/* feature rows */
+h2.sec{font-size:clamp(1.2rem,3.4vw,1.55rem);margin:44px 0 6px}
+.feat{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:28px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px;margin:18px 0}
+.feat.flip{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}
+.feat.flip .shot{order:2}
+.shot{justify-self:center;width:100%;max-width:270px;padding:0;border:0;background:none;cursor:zoom-in}
+.shot img{width:100%;aspect-ratio:9/16;border-radius:18px;display:block;box-shadow:0 8px 24px rgba(23,48,65,.16)}
+.kick{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--pink)}
+h3{font-size:1.25rem;line-height:1.25;margin:2px 0 8px}
+ul{margin:0;padding-left:1.15em}
+li{margin:5px 0}
+li::marker{color:var(--accent)}
+@media (max-width:640px){.feat,.feat.flip{grid-template-columns:1fr;gap:18px;padding:18px}.feat.flip .shot{order:0}.shot{max-width:230px}}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:14px;margin:18px 0}
+.box{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px 20px}
+.box h3{font-size:1.05rem}
+.royal{background:linear-gradient(135deg,#2a1d4a,#151a3a);color:#f6efe0;border:0;border-radius:24px;padding:26px 24px;margin:18px 0;position:relative;overflow:hidden}
+.royal .kick{color:var(--gold)}
+.royal li::marker{color:var(--gold)}
+.royal .sil{position:absolute;right:-6px;bottom:-14px;width:150px;opacity:.16}
+.royal ul{position:relative;max-width:60ch}
+.note{background:var(--soft);border-radius:20px;padding:18px 20px;margin:18px 0}
+.note h3{font-size:1.05rem;margin-top:0}
+.cta{text-align:center;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px 20px;margin:36px 0 0}
+.cta img{width:72px;height:72px;border-radius:18px}
+.cta h2{margin:10px 0 4px;font-size:1.3rem}
+.cta p{color:var(--muted);margin:0 0 16px}
+.cta .btns{justify-content:center;margin:0}
+footer{color:var(--muted);font-size:.88rem;text-align:center;margin-top:30px}
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:20;background:rgba(10,20,28,.88);display:flex;align-items:center;justify-content:center;padding:16px}
+.lb[hidden]{display:none}
+.lb img{max-width:min(100%,460px);max-height:calc(100vh - 80px);border-radius:18px}
+.lb button{position:absolute;top:12px;right:14px;font:600 1rem 'Poppins',sans-serif;background:#fff;color:#173041;border:0;border-radius:999px;padding:6px 14px;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 </style>
 </head><body><main>
-<div class="top"><a class="back" href="../">← Make It Wrong Studio</a><a class="brand" href="../" aria-label="Make It Wrong Studio">MAKE IT W<span class="r">R</span>ONG</a></div>
-<div class="app"><img src="icon.png" alt="Little Paws app icon"><div><h1>Little Paws</h1><div class="sub">Cat Collector · Make It Wrong Studio</div></div></div>
-<img class="hero" src="feature.png" alt="Little Paws">
-<div class="btns"><span class="btn soon">Sắp ra mắt trên Google Play</span><a class="btn alt" href="privacy.html">Chính sách quyền riêng tư · Privacy Policy</a></div>
-<section lang="vi"><h2>Nuôi mèo · Sưu tầm · Thư giãn</h2>
-<p>Đón 100 giống mèo đáng yêu về nhà, trang trí 20 căn phòng, săn bé Siêu Hiếm lấp lánh, làm nhiệm vụ nhận Vé May Mắn và hoàn thành Thư viện mèo 339 màu lông. Những bé mèo Hoàng Gia bí ẩn đang chờ bạn khám phá!</p>
-<p>Đăng nhập Google Play Games để tự động lưu tiến trình vào tài khoản Google, đổi máy vẫn giữ nguyên các bé mèo. Không bắt buộc: game vẫn chơi được không cần mạng.</p></section>
-<section lang="en"><h2>Raise · Collect · Relax</h2>
-<p>Bring 100 adorable cat breeds home, decorate 20 cozy rooms, hunt sparkling Super Rare cats, complete quests for Lucky Tickets and fill the 339-color Cat Library. Mysterious royal cats are waiting to be discovered!</p>
-<p>Sign in to Google Play Games to save your progress to your Google account and keep your cats on a new phone. It's optional: the game also plays offline.</p></section>
-<p class="meta">Liên hệ / Contact: <a href="mailto:makeitwrong.studio@gmail.com">makeitwrong.studio@gmail.com</a></p>
-<footer>© 2026 Make It Wrong Studio</footer>
-</main></body></html>
+<div class="top"><a class="back" href="../">← Make It Wrong Studio</a>
+<div class="right"><div class="lang" role="group" aria-label="Language"><button type="button" data-set="vi">Tiếng Việt</button><button type="button" data-set="en">English</button></div>
+<a class="brand" href="../" aria-label="Make It Wrong Studio">MAKE IT W<span class="r">R</span>ONG</a></div></div>
+
+<div class="app"><img src="icon.png" alt="Little Paws app icon" width="96" height="96">
+<div><h1><span class="vi">Little Paws: Nuôi Mèo Gacha</span><span class="en">Little Paws: Cat Collector</span></h1>
+<div class="dev">Make It Wrong Studio</div>
+<div class="tags"><span class="tag">Android</span><span class="tag vi">Miễn phí</span><span class="tag en">Free</span><span class="tag vi">Không mua hàng trong ứng dụng</span><span class="tag en">No in-app purchases</span><span class="tag vi">Quảng cáo tự chọn</span><span class="tag en">Optional rewarded ads</span></div></div></div>
+
+<div class="btns"><a class="btn" href="https://play.google.com/store/apps/details?id=com.makeitwrongstudio.littlepaws"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 2.8v18.4c0 .5.5.8.9.6l15.8-9.2c.4-.3.4-.9 0-1.2L4.9 2.2c-.4-.2-.9.1-.9.6z"/></svg><span class="vi">Tải trên Google Play</span><span class="en">Get it on Google Play</span></a>
+<a class="btn alt" href="privacy.html"><span class="vi">Chính sách quyền riêng tư</span><span class="en">Privacy Policy</span></a></div>
+
+<img class="hero vi" src="img/feature_vi.jpg" alt="Little Paws: Nuôi Mèo Gacha" width="1024" height="500">
+<img class="hero en" src="img/feature_en.jpg" alt="Little Paws: Cat Collector" width="1024" height="500">
+
+<p class="lead vi">Nuôi và sưu tầm 100 giống mèo dễ thương, săn bé Siêu Hiếm lấp lánh!</p>
+<p class="lead en">Raise and collect 100 adorable cat breeds and hunt sparkling Super Rare cats!</p>
+<p class="intro vi">Chào mừng bạn đến với Little Paws, ngôi nhà ấm áp của 100 giống mèo đáng yêu! Đón các bé về nhà, trang trí phòng thật xinh, cho các bé ăn, chơi và ngắm các bé tung tăng khắp nhà. Mỗi bé mèo đều làm ra paws cho bạn, kể cả khi bạn không mở game.</p>
+<p class="intro en">Welcome to Little Paws, a cozy home for 100 adorable cat breeds! Bring cats home, decorate their rooms, feed them, play with them and watch them wander around. Every cat earns paws for you, even while the game is closed.</p>
+
+<div class="strip vi" aria-label="Ảnh màn hình">
+<button type="button" data-zoom="img/shot1_vi.jpg"><img src="img/shot1_vi.jpg" alt="Nuôi 100 giống mèo đáng yêu" loading="lazy" width="540" height="960"></button>
+<button type="button" data-zoom="img/shot2_vi.jpg"><img src="img/shot2_vi.jpg" alt="Săn bé Siêu Hiếm lấp lánh" loading="lazy" width="540" height="960"></button>
+<button type="button" data-zoom="img/shot3_vi.jpg"><img src="img/shot3_vi.jpg" alt="Gacha x1 x10 x20" loading="lazy" width="540" height="960"></button>
+<button type="button" data-zoom="img/shot4_vi.jpg"><img src="img/shot4_vi.jpg" alt="Thời trang cho từng bé" loading="lazy" width="540" height="960"></button>
+<button type="button" data-zoom="img/shot5_vi.jpg"><img src="img/shot5_vi.jpg" alt="Thư viện 100 giống mèo" loading="lazy" width="540" height="960"></button>
+<button type="button" data-zoom="img/shot6_vi.jpg"><img src="img/shot6_vi.jpg" alt="Quà Siêng Năng" loading="lazy" width="540" height="960"></button>
+<button type="button" data-zoom="img/shot7_vi.jpg"><img src="img/shot7_vi.jpg" alt="Nhiệm vụ và Vé May Mắn" loading="lazy" width="540" height="960"></button>
+</div>
+<div class="strip en" aria-label="Screenshots">
+<button type="button" data-zoom="img/shot1_en.jpg"><img src="img/shot1_en.jpg" alt="Raise 100 adorable cat breeds" loading="lazy" width="540" height="960"></button>
+<button type="button" data-zoom="img/shot2_en.jpg"><img src="img/shot2_en.jpg" alt="Hunt sparkling Super Rare cats" loading="lazy" width="540" height="960"></button>
+<button type="button" data-zoom="img/shot3_en.jpg"><img src="img/shot3_en.jpg" alt="Gacha x1 x10 x20" loading="lazy" width="540" height="960"></button>
+<button type="button" data-zoom="img/shot4_en.jpg"><img src="img/shot4_en.jpg" alt="Fashion for every kitty" loading="lazy" width="540" height="960"></button>
+<button type="button" data-zoom="img/shot5_en.jpg"><img src="img/shot5_en.jpg" alt="Cat library" loading="lazy" width="540" height="960"></button>
+<button type="button" data-zoom="img/shot6_en.jpg"><img src="img/shot6_en.jpg" alt="Diligence Gifts" loading="lazy" width="540" height="960"></button>
+<button type="button" data-zoom="img/shot7_en.jpg"><img src="img/shot7_en.jpg" alt="Quests and Lucky Tickets" loading="lazy" width="540" height="960"></button>
+</div>
+
+<h2 class="sec"><span class="vi">Có gì trong Little Paws</span><span class="en">What's inside</span></h2>
+
+<div class="feat"><button type="button" class="shot" data-zoom-l="1"><img class="vi" src="img/shot1_vi.jpg" alt="Phòng mèo trong Little Paws" loading="lazy" width="540" height="960"><img class="en" src="img/shot1_en.jpg" alt="A cat room in Little Paws" loading="lazy" width="540" height="960"></button>
+<div><div class="kick vi">Nuôi mèo</div><div class="kick en">Raise</div>
+<h3 class="vi">100 giống mèo, 339 màu lông</h3><h3 class="en">100 breeds, 339 coat colors</h3>
+<ul class="vi"><li>Ba Tư, Maine Coon, Xiêm, Ragdoll, Tai cụp Scotland, Bengal, Sphynx và nhiều giống khác</li><li>Mèo Việt: Mèo mướp, Mèo mun, Mèo tam thể, Mèo nhị thể</li><li>Mỗi giống có dáng, tai, đuôi và hoa văn riêng</li></ul>
+<ul class="en"><li>Persian, Maine Coon, Siamese, Ragdoll, Scottish Fold, Bengal, Sphynx and many more</li><li>Vietnamese cats: tabby, black, calico and bicolor</li><li>Every breed has its own body, ears, tail and pattern</li></ul></div></div>
+
+<div class="feat flip"><button type="button" class="shot" data-zoom-l="2"><img class="vi" src="img/shot2_vi.jpg" alt="Bé mèo Siêu Hiếm" loading="lazy" width="540" height="960"><img class="en" src="img/shot2_en.jpg" alt="Super Rare cats" loading="lazy" width="540" height="960"></button>
+<div><div class="kick vi">Sưu tầm</div><div class="kick en">Collect</div>
+<h3 class="vi">4 cấp độ: Thường · Tốt · Hiếm · Siêu Hiếm</h3><h3 class="en">4 tiers: Common · Good · Rare · Super Rare</h3>
+<ul class="vi"><li>Bé càng hiếm càng làm ra nhiều paws</li><li>Bé Hiếm có sao xoay quanh; bé Siêu Hiếm đội vương miện ngọc trai, có hào quang, cầu vồng và pháo hoa sao</li><li>4 màu độc quyền: Vàng kim ánh, Ngọc trai, Ngân hà, Hoa anh đào</li></ul>
+<ul class="en"><li>The rarer the cat, the more paws it earns</li><li>Rare cats have orbiting stars; Super Rare cats wear a pearl crown with a halo, a rainbow and star fireworks</li><li>4 exclusive colors: Shimmering Gold, Pearl, Galaxy, Sakura</li></ul></div></div>
+
+<div class="feat"><button type="button" class="shot" data-zoom-l="3"><img class="vi" src="img/shot3_vi.jpg" alt="Màn hình Gacha" loading="lazy" width="540" height="960"><img class="en" src="img/shot3_en.jpg" alt="Gacha screen" loading="lazy" width="540" height="960"></button>
+<div><div class="kick">Gacha</div>
+<h3>Gacha x1 · x10 · x20</h3>
+<ul class="vi"><li>Dùng paws kiếm được trong game để đón mèo mới, không cần trả tiền thật</li><li>Bảo hiểm: chắc chắn có bé Hiếm hoặc Siêu Hiếm trong 150 lượt</li></ul>
+<ul class="en"><li>Use paws earned in the game to welcome new cats, no real money needed</li><li>Pity: a Rare or Super Rare cat is guaranteed within 150 rolls</li></ul></div></div>
+
+<div class="feat flip"><button type="button" class="shot" data-zoom-l="4"><img class="vi" src="img/shot4_vi.jpg" alt="Thời trang cho mèo" loading="lazy" width="540" height="960"><img class="en" src="img/shot4_en.jpg" alt="Cat fashion" loading="lazy" width="540" height="960"></button>
+<div><div class="kick vi">Thời trang</div><div class="kick en">Fashion</div>
+<h3 class="vi">Thời trang cho từng bé</h3><h3 class="en">Fashion for every kitty</h3>
+<ul class="vi"><li>Nơ, vòng hoa, vương miện ánh trăng, nơ bướm, ngọc trai, áo choàng pháp sư, giáp hiệp sĩ, áo hoàng tử, nơ đuôi</li><li>Bé Hiếm đeo vòng cổ ruy băng ánh kim và có Cánh chuồn chuồn</li><li>Bé Siêu Hiếm có Cánh bướm ánh trăng pha lê lấp lánh</li><li>Vừa xinh vừa tăng paws</li></ul>
+<ul class="en"><li>Bows, flower crowns, moonlight crowns, bow ties, pearls, wizard cloaks, knight armor, prince jackets, tail bows</li><li>Rare cats wear a shiny ribbon collar and can get Dragonfly Wings</li><li>Super Rare cats get sparkling moonlight butterfly wings</li><li>Cute, and they boost paws</li></ul></div></div>
+
+<div class="feat"><button type="button" class="shot" data-zoom-l="5"><img class="vi" src="img/shot5_vi.jpg" alt="Thư viện mèo" loading="lazy" width="540" height="960"><img class="en" src="img/shot5_en.jpg" alt="Cat library" loading="lazy" width="540" height="960"></button>
+<div><div class="kick vi">Thư viện</div><div class="kick en">Library</div>
+<h3 class="vi">Thư viện mèo</h3><h3 class="en">Cat Library</h3>
+<ul class="vi"><li>Ghi lại mọi giống và màu bạn đã gặp. Bạn có sưu tầm đủ cả 339 màu?</li><li>Tab Mèo của tôi: xem các bé của từng phòng, bé mạnh nhất lên đầu</li><li>Tab Hoàng Gia: các bé Hoàng Gia và cách đón các bé về nhà</li><li>Treo ảnh bé yêu thích lên khung tranh của mỗi phòng</li></ul>
+<ul class="en"><li>Every breed and color you meet is recorded. Can you collect all 339 colors?</li><li>My cats tab: see the cats of each room, strongest first</li><li>Royal tab: the royal cats and how to welcome them</li><li>Hang a picture of your favorite cat in each room's frame</li></ul></div></div>
+
+<div class="feat flip"><button type="button" class="shot" data-zoom-l="6"><img class="vi" src="img/shot6_vi.jpg" alt="Quà Siêng Năng" loading="lazy" width="540" height="960"><img class="en" src="img/shot6_en.jpg" alt="Diligence Gifts" loading="lazy" width="540" height="960"></button>
+<div><div class="kick vi">Quà tặng</div><div class="kick en">Gifts</div>
+<h3 class="vi">Quà Siêng Năng</h3><h3 class="en">Diligence Gifts</h3>
+<ul class="vi"><li>Ghé thăm đều đặn để mở 3 mốc quà và nhận tổng cộng 6 bé Siêu Hiếm</li></ul>
+<ul class="en"><li>Visit regularly to open 3 gift milestones and win 6 Super Rare cats in total</li></ul></div></div>
+
+<div class="feat"><button type="button" class="shot" data-zoom-l="7"><img class="vi" src="img/shot7_vi.jpg" alt="Nhiệm vụ và Vé May Mắn" loading="lazy" width="540" height="960"><img class="en" src="img/shot7_en.jpg" alt="Quests and Lucky Tickets" loading="lazy" width="540" height="960"></button>
+<div><div class="kick vi">Nhiệm vụ</div><div class="kick en">Quests</div>
+<h3 class="vi">Nhiệm vụ &amp; Vé May Mắn</h3><h3 class="en">Quests &amp; Lucky Tickets</h3>
+<ul class="vi"><li>Nhiệm vụ Nhận nuôi, Gacha và Sưu tầm Siêu Hiếm với phần thưởng mèo Hiếm và Siêu Hiếm</li><li>Vé May Mắn, Bạc, Vàng, Kim Cương, Cầu Vồng: mỗi lần quay chắc chắn ra bé Hiếm hoặc Siêu Hiếm</li></ul>
+<ul class="en"><li>Rehome, Gacha and Super Rare collection quests that reward Rare and Super Rare cats</li><li>Lucky, Silver, Gold, Diamond and Rainbow tickets: every spin is a Rare or Super Rare cat</li></ul></div></div>
+
+<div class="royal"><svg class="sil" viewBox="0 0 100 100" aria-hidden="true" fill="#f4c766"><path d="M28 30l6-14 8 10 8-12 8 12 8-10 6 14z"/><path d="M22 92c0-22 6-36 14-44l-6-14 12 8h16l12-8-6 14c8 8 14 22 14 44z"/></svg>
+<div class="kick vi">Bí ẩn</div><div class="kick en">Mystery</div>
+<h3 class="vi">Bộ sưu tập Hoàng Gia</h3><h3 class="en">Royal Collection</h3>
+<ul class="vi"><li>Những bé mèo hoàng tộc độc nhất vô nhị đang chờ bạn khám phá, cả vương quốc chỉ có một bé mỗi loại</li><li>Mỗi bé mang trang phục lộng lẫy, hào quang riêng và một sức mạnh đặc biệt cho vương quốc mèo của bạn</li><li>Danh tính các bé được giấu kín sau những chiếc bóng đen: vượt qua thử thách bí ẩn để hé lộ và đón bé về nhà</li><li>Bạn có sưu tầm đủ cả gia đình Hoàng Gia?</li></ul>
+<ul class="en"><li>One-of-a-kind royal cats are waiting to be discovered, only one of each in the whole kingdom</li><li>Each wears a dazzling outfit and its own aura, with a special power for your cat kingdom</li><li>Their identities hide behind dark shadows: take on mysterious challenges to reveal them and bring them home</li><li>Can you collect the whole Royal family?</li></ul></div>
+
+<div class="grid">
+<div class="box"><h3 class="vi">20 căn phòng để trang trí</h3><h3 class="en">20 rooms to decorate</h3>
+<ul class="vi"><li>Mỗi phòng một mẫu thảm, giấy dán tường và rèm cửa pastel riêng</li><li>Chậu cát, bát ăn, cây mèo, nhà mèo và đồ chơi giúp các bé làm ra nhiều paws hơn</li><li>Các bé ăn ở bát, chơi với đồ chơi, ngủ trên cây mèo và chui vào lâu đài len đèn nháy ngủ ngon</li></ul>
+<ul class="en"><li>Each room has its own pastel carpet, wallpaper and window curtains</li><li>Litter boxes, bowls, cat trees, cat houses and toys help your cats earn more paws</li><li>Cats eat at the bowl, play with toys, nap on the cat tree and curl up in a twinkling wool castle</li></ul></div>
+<div class="box"><h3 class="vi">Chơi thư giãn</h3><h3 class="en">Relaxing play</h3>
+<ul class="vi"><li>Không giới hạn năng lượng, không áp lực</li><li>Vắng nhà tối đa 5 giờ vẫn nhận paws</li><li>Chạm nhặt coin paws, cho mèo ăn, chuyển phòng nhẹ nhàng</li><li>3 bản nhạc nền dễ thương (Hộp nhạc, Lofi mèo lười, Vui tươi), thỉnh thoảng có tiếng meo nhỏ</li></ul>
+<ul class="en"><li>No energy limits, no pressure</li><li>Earn paws for up to 5 hours while you are away</li><li>Tap to collect paw coins, feed your cats, move them between rooms</li><li>3 cute music tracks (Music box, Lazy cat lofi, Cheerful) with a soft meow now and then</li></ul></div>
+<div class="box"><h3 class="vi">Lưu và tuỳ chỉnh</h3><h3 class="en">Save and settings</h3>
+<ul class="vi"><li>Đăng nhập Google Play Games (không bắt buộc) để tự động lưu tiến trình vào tài khoản Google, đổi máy vẫn giữ các bé mèo</li><li>Chế độ màn hình Luôn sáng hoặc Tiết kiệm pin</li><li>Chọn 60 hoặc 30 khung hình: luôn mượt mà hoặc mát máy, đỡ tốn pin</li></ul>
+<ul class="en"><li>Sign in to Google Play Games (optional) to save your progress to your Google account and keep your cats on a new phone</li><li>Always on or Battery saver screen mode</li><li>60 or 30 FPS: always smooth, or cooler and easier on the battery</li></ul></div>
+</div>
+
+<div class="note"><h3 class="vi">Quảng cáo tự chọn</h3><h3 class="en">Optional ads</h3>
+<p class="vi">Little Paws miễn phí và có quảng cáo có tặng thưởng: bạn chỉ xem khi muốn nhận thêm quà (paws thưởng, cho cả phòng ăn, Quà Siêng Năng). Game không có mua hàng trong ứng dụng. Cần kết nối mạng để xem quảng cáo nhận thưởng.</p>
+<p class="en">Little Paws is free and has rewarded ads: you only watch one when you want an extra gift (bonus paws, feeding a room, Diligence Gifts). There are no in-app purchases. An internet connection is needed to watch reward ads.</p></div>
+
+<div class="cta"><img src="icon.png" alt="" width="72" height="72">
+<h2 class="vi">Đón bé mèo đầu tiên về nhà</h2><h2 class="en">Bring your first cat home</h2>
+<p class="vi">Miễn phí trên Google Play cho Android</p><p class="en">Free on Google Play for Android</p>
+<div class="btns"><a class="btn" href="https://play.google.com/store/apps/details?id=com.makeitwrongstudio.littlepaws"><span class="vi">Tải trên Google Play</span><span class="en">Get it on Google Play</span></a></div></div>
+
+<footer><span class="vi">Góp ý và hỗ trợ</span><span class="en">Feedback and support</span>: <a href="mailto:makeitwrong.studio@gmail.com">makeitwrong.studio@gmail.com</a> · <a href="privacy.html">Privacy Policy</a><br>© 2026 Make It Wrong Studio</footer>
+</main>
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Screenshot"><img id="lbimg" alt=""><button type="button" id="lbx">✕</button></div>
+<script>
+(function(){
+var d=document.documentElement,lb=document.getElementById('lb'),li=document.getElementById('lbimg');
+function setL(l){d.setAttribute('data-l',l);d.lang=l;try{localStorage.setItem('lp-lang',l)}catch(e){}}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('[data-set]');if(b){setL(b.getAttribute('data-set'));return;}
+  var z=e.target.closest('[data-zoom],[data-zoom-l]');
+  if(z){var src=z.getAttribute('data-zoom')||('img/shot'+z.getAttribute('data-zoom-l')+'_'+d.getAttribute('data-l')+'.jpg');
+    li.src=src;var im=z.querySelector('img:not([style*="none"])');li.alt=(im&&im.alt)||'';lb.hidden=false;document.getElementById('lbx').focus();return;}
+  if(e.target.id==='lbx'||e.target===lb){lb.hidden=true;li.removeAttribute('src');}
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden){lb.hidden=true;li.removeAttribute('src');}});
+})();
+</script>
+</body></html>
