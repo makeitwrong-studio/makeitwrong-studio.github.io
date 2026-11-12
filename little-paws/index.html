@@ -8,7 +8,7 @@
 <meta property="og:description" content="Raise and collect 100 adorable cat breeds. A cozy cat collector game by Make It Wrong Studio.">
 <meta property="og:image" content="https://makeitwrong-studio.github.io/little-paws/img/feature_en.jpg">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script>(function(){var l;try{l=localStorage.getItem('lp-lang')}catch(e){}if(l!=='vi'&&l!=='en'){l=(navigator.language||'').toLowerCase().indexOf('vi')===0?'vi':'en'}document.documentElement.setAttribute('data-l',l);document.documentElement.lang=l})();</script>
+<script>(function(){var l;try{l=(localStorage.getItem('miw-lang')||localStorage.getItem('lp-lang'))}catch(e){}if(l!=='vi'&&l!=='en'){l=(navigator.language||'').toLowerCase().indexOf('vi')===0?'vi':'en'}document.documentElement.setAttribute('data-l',l);document.documentElement.lang=l})();</script>
 <style>
 :root{--bg:#fff7f0;--fg:#173041;--muted:#566f7a;--accent:#e2562f;--card:#fff;--line:#f0dccd;--pink:#e8578a;--soft:#ffeee2;--royal:#2a1d4a;--gold:#f4c766}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0f2029;--fg:#e8f4f1;--muted:#a3bcc5;--accent:#ff8a5c;--card:#163240;--line:#2a4a58;--pink:#ff8fb1;--soft:#1b3a48;color-scheme:dark}}
@@ -198,7 +198,7 @@ button:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-off
 <script>
 (function(){
 var d=document.documentElement,lb=document.getElementById('lb'),li=document.getElementById('lbimg');
-function setL(l){d.setAttribute('data-l',l);d.lang=l;try{localStorage.setItem('lp-lang',l)}catch(e){}}
+function setL(l){d.setAttribute('data-l',l);d.lang=l;try{localStorage.setItem('miw-lang',l);localStorage.setItem('lp-lang',l)}catch(e){}}
 document.addEventListener('click',function(e){
   var b=e.target.closest('[data-set]');if(b){setL(b.getAttribute('data-set'));return;}
   var z=e.target.closest('[data-zoom],[data-zoom-l]');

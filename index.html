@@ -1,6 +1,7 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!doctype html><html lang="en" data-l="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Make It Wrong Studio</title>
 <meta name="description" content="Make It Wrong Studio makes small, colorful mobile games (Spirit Seal Chronicles, Spirit Seal: Beast Guardians, Little Paws, Eagle Eye: Spot the Difference) and the kids' YouTube channel Leo &amp; Trixie Adventures.">
+<script>(function(){var l;try{l=localStorage.getItem('miw-lang')}catch(e){}if(l!=='vi'&&l!=='en'){l=(navigator.language||'').toLowerCase().indexOf('vi')===0?'vi':'en'}document.documentElement.setAttribute('data-l',l);document.documentElement.lang=l})();</script>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#fff7f0;--fg:#173041;--muted:#566f7a;--accent:#e2562f;--card:#fff;--line:#f0dccd}
@@ -20,42 +21,51 @@ h1.sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidd
 .brand{display:inline-flex;align-items:center;gap:0;background:#173041;color:#fff;border-radius:14px;padding:10px 18px;font-weight:700;letter-spacing:.08em;font-size:1.05rem;text-decoration:none;line-height:1.2;box-shadow:0 0 0 1px rgba(255,255,255,.08)}
 .brand .r{display:inline-block;transform:scaleX(-1);color:#ff7a45}
 a{color:var(--accent);font-weight:600}
-.links a{margin-right:14px}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.links a{display:inline-flex;align-items:center;padding:7px 16px;border-radius:999px;border:2px solid var(--accent);color:var(--accent);background:transparent;text-decoration:none;font-size:.9rem;line-height:1.2}
+.links a.main{background:var(--accent);color:#fff}
+.links a:hover{filter:brightness(1.08)}
 footer{color:var(--muted);font-size:.9rem;margin-top:40px}
 @media (max-width:420px){.game{align-items:flex-start}.game img{width:64px;height:64px;border-radius:16px}.game img.logo{border-radius:0}}
+html[data-l="vi"] .en,html[data-l="en"] .vi{display:none!important}
+.langsw{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--card)}
+.langsw button{font:600 .8rem 'Poppins',sans-serif;border:0;background:none;color:var(--muted);padding:6px 12px;cursor:pointer}
+html[data-l="vi"] .langsw [data-set="vi"],html[data-l="en"] .langsw [data-set="en"]{background:var(--accent);color:#fff}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 </style></head><body><main>
-<a class="brand" href="./" aria-label="Make It Wrong Studio">MAKE IT W<span class="r">R</span>ONG</a>
-<div class="eyebrow" style="margin-top:22px">Independent game studio</div>
+<div class="top"><a class="brand" href="./" aria-label="Make It Wrong Studio">MAKE IT W<span class="r">R</span>ONG</a><div class="langsw" role="group" aria-label="Language / Ngôn ngữ"><button type="button" data-set="vi">Tiếng Việt</button><button type="button" data-set="en">English</button></div></div>
+<div class="eyebrow" style="margin-top:22px"><span class="vi">Studio game độc lập</span><span class="en">Independent game studio</span></div>
 <h1 class="sr">Make It Wrong Studio</h1>
 <div class="intro"><video id="intro" muted autoplay playsinline preload="auto" disablepictureinpicture disableremoteplayback aria-label="Make It Wrong Studio intro: the letters MAKE IT WRONG drop in, the R turns orange and flips, a red STUDIO stamp lands, then Independent game studio appears"><source src="media/studio-intro.mp4" type="video/mp4"><source src="media/studio-intro.webm" type="video/webm"></video></div>
-<p>We make small, colorful mobile games that are easy to pick up and fun to finish.</p>
+<p class="vi">Chúng tôi làm những game di động nhỏ xinh, nhiều màu sắc, dễ chơi và vui đến tận màn cuối.</p><p class="en">We make small, colorful mobile games that are easy to pick up and fun to finish.</p>
 
-<p class="label">Our games</p>
+<p class="label"><span class="vi">Game của chúng tôi</span><span class="en">Our games</span></p>
 
 <div class="game"><a href="spiritsealchronicles/"><img src="spiritsealchronicles/icon.png" alt="Spirit Seal Chronicles app icon"></a>
-<div><h2>Spirit Seal Chronicles</h2><p>A bright turn-based fantasy RPG. Seal Spirit Beasts of the Five Elements, build your 3 vs 3 team and explore the Wood region. Free to start, coming soon to Google Play.</p>
-<span class="links"><a href="spiritsealchronicles/">Game page</a><a href="spiritsealchronicles/privacy.html">Privacy Policy</a></span></div></div>
+<div><h2><span class="vi">Linh Thú Ký: Spirit Seal</span><span class="en">Spirit Seal Chronicles</span></h2><p class="vi">Game nhập vai fantasy đánh theo lượt, màu sắc tươi sáng. Phong ấn Linh thú Ngũ hành, xây đội hình 3 đấu 3 và khám phá vùng đất Mộc. Chơi miễn phí, sắp ra mắt trên Google Play.</p><p class="en">A bright turn-based fantasy RPG. Seal Spirit Beasts of the Five Elements, build your 3 vs 3 team and explore the Wood region. Free to start, coming soon to Google Play.</p>
+<span class="links"><a class="main" href="spiritsealchronicles/"><span class="vi">Trang game</span><span class="en">Game page</span></a><a href="spiritsealchronicles/privacy.html"><span class="vi">Chính sách quyền riêng tư</span><span class="en">Privacy Policy</span></a></span></div></div>
 
 <div class="game"><a href="beast-guardians/"><img src="beast-guardians/icon.png" alt="Spirit Seal: Beast Guardians app icon"></a>
-<div><h2>Spirit Seal: Beast Guardians</h2><p>Linh Thú Hộ Trận. Summon Spirit Beasts of six elements, hold the lanes and guard the Sacred Shrine against a cunning Demon Clan. Coming soon.</p>
-<span class="links"><a href="beast-guardians/">Game page</a></span></div></div>
+<div><h2><span class="vi">Linh Thú Hộ Trận</span><span class="en">Spirit Seal: Beast Guardians</span></h2><p class="vi">Triệu hồi Linh thú sáu hệ, giữ vững các đường trận và bảo vệ Đền Thiêng trước Ma tộc xảo quyệt. Sắp ra mắt.</p><p class="en">Linh Thú Hộ Trận. Summon Spirit Beasts of six elements, hold the lanes and guard the Sacred Shrine against a cunning Demon Clan. Coming soon.</p>
+<span class="links"><a class="main" href="beast-guardians/"><span class="vi">Trang game</span><span class="en">Game page</span></a></span></div></div>
 
 <div class="game"><a href="little-paws/"><img src="little-paws/icon.png" alt="Little Paws app icon"></a>
-<div><h2>Little Paws</h2><p>Raise and collect 100 adorable cat breeds. Your cats nap, wander and earn paws you can spend to discover new friends, from Common all the way to Super Rare and mysterious royal cats.</p>
-<span class="links"><a href="little-paws/">Game page</a><a href="https://play.google.com/store/apps/details?id=com.makeitwrongstudio.littlepaws">Google Play</a><a href="little-paws/privacy.html">Privacy Policy</a></span></div></div>
+<div><h2>Little Paws</h2><p class="vi">Nuôi và sưu tầm 100 giống mèo đáng yêu. Các bé ngủ, dạo chơi và kiếm paws để bạn đón thêm bạn mới, từ Thường đến Siêu Hiếm và cả những bé mèo Hoàng Gia bí ẩn.</p><p class="en">Raise and collect 100 adorable cat breeds. Your cats nap, wander and earn paws you can spend to discover new friends, from Common all the way to Super Rare and mysterious royal cats.</p>
+<span class="links"><a class="main" href="little-paws/"><span class="vi">Trang game</span><span class="en">Game page</span></a><a href="https://play.google.com/store/apps/details?id=com.makeitwrongstudio.littlepaws">Google Play</a><a href="little-paws/privacy.html"><span class="vi">Chính sách quyền riêng tư</span><span class="en">Privacy Policy</span></a></span></div></div>
 
 <div class="game"><img src="eagle-eye/icon.png" alt="Eagle Eye app icon">
-<div><h2>Eagle Eye: Spot the Difference</h2><p>300 levels across 50 colorful scenes. Find every difference before time runs out.</p>
-<a href="eagle-eye/privacy.html">Privacy Policy</a></div></div>
+<div><h2>Eagle Eye: Spot the Difference</h2><p class="vi">300 màn chơi trên 50 khung cảnh nhiều màu sắc. Tìm ra mọi điểm khác biệt trước khi hết giờ.</p><p class="en">300 levels across 50 colorful scenes. Find every difference before time runs out.</p>
+<span class="links"><a href="eagle-eye/privacy.html"><span class="vi">Chính sách quyền riêng tư</span><span class="en">Privacy Policy</span></a></span></div></div>
 
-<p class="label">Our YouTube channel</p>
+<p class="label"><span class="vi">Kênh YouTube của chúng tôi</span><span class="en">Our YouTube channel</span></p>
 
 <div class="game"><a href="leo-trixie/"><img class="logo" src="leo-trixie/icon.png" alt="Leo &amp; Trixie Adventures channel icon"></a>
-<div><h2>Leo &amp; Trixie Adventures</h2><p>A kids' channel where Leo and his baby triceratops friend Trixie travel back in time to meet real dinosaurs and learn how they lived.</p>
-<span class="links"><a href="leo-trixie/">Channel page</a><a href="https://www.youtube.com/@Leo_Trixie.Adventures">Watch on YouTube</a></span></div></div>
+<div><h2>Leo &amp; Trixie Adventures</h2><p class="vi">Kênh thiếu nhi nơi Leo và cô bạn khủng long ba sừng Trixie du hành ngược thời gian, gặp những loài khủng long có thật và tìm hiểu chúng đã sống ra sao.</p><p class="en">A kids' channel where Leo and his baby triceratops friend Trixie travel back in time to meet real dinosaurs and learn how they lived.</p>
+<span class="links"><a class="main" href="leo-trixie/"><span class="vi">Trang kênh</span><span class="en">Channel page</span></a><a href="https://www.youtube.com/@Leo_Trixie.Adventures"><span class="vi">Xem trên YouTube</span><span class="en">Watch on YouTube</span></a></span></div></div>
 
-<footer>Contact: <a href="mailto:makeitwrong.studio@gmail.com">makeitwrong.studio@gmail.com</a></footer>
+<footer><span class="vi">Liên hệ</span><span class="en">Contact</span>: <a href="mailto:makeitwrong.studio@gmail.com">makeitwrong.studio@gmail.com</a></footer>
 </main>
+<script>document.addEventListener('click',function(e){var b=e.target.closest('[data-set]');if(!b)return;var l=b.getAttribute('data-set'),d=document.documentElement;d.setAttribute('data-l',l);d.lang=l;try{localStorage.setItem('miw-lang',l)}catch(x){}});</script>
 <script>
 (function(){var v=document.getElementById('intro');if(!v)return;var end='media/studio-intro-end.jpg';
 function still(){v.removeAttribute('autoplay');v.pause();v.poster=end;}

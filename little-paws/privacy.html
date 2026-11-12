@@ -3,6 +3,7 @@
 <title>Little Paws · Privacy Policy</title>
 <link rel="canonical" href="https://makeitwrong-studio.github.io/little-paws/privacy.html">
 <link rel="icon" href="icon.png">
+<script>(function(){var l;try{l=localStorage.getItem('miw-lang')}catch(e){}if(l!=='vi'&&l!=='en'){l=(navigator.language||'').toLowerCase().indexOf('vi')===0?'vi':'en'}document.documentElement.setAttribute('data-l',l);document.documentElement.lang=l})();</script>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#fff7f0;--fg:#173041;--muted:#566f7a;--accent:#e2562f;--card:#fff;--line:#f0dccd;--pink:#e8578a}
@@ -36,13 +37,17 @@ table{border-collapse:collapse;width:100%;font-size:.9rem;margin:8px 0}
 th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
 th{color:var(--muted);font-weight:600}
 footer{color:var(--muted);font-size:.88rem;text-align:center;margin-top:34px}
+html[data-l="vi"] .en,html[data-l="en"] .vi{display:none!important}
+.langsw{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--card)}
+.langsw button{font:600 .8rem 'Poppins',sans-serif;border:0;background:none;color:var(--muted);padding:6px 12px;cursor:pointer}
+html[data-l="vi"] .langsw [data-set="vi"],html[data-l="en"] .langsw [data-set="en"]{background:var(--accent);color:#fff}
 </style>
 </head><body><main>
 <div class="top"><a class="back" href="./">← Little Paws</a><a class="brand" href="../" aria-label="Make It Wrong Studio">MAKE IT W<span class="r">R</span>ONG</a></div>
 <div class="app"><img src="icon.png" alt="Little Paws app icon"><div><h1>Privacy Policy</h1><div class="sub">Little Paws · Make It Wrong Studio</div></div></div>
-<div class="lang"><a href="#vi">Tiếng Việt</a><a href="#en">English</a></div>
+<div class="lang"><div class="langsw" role="group" aria-label="Language / Ngôn ngữ"><button type="button" data-set="vi">Tiếng Việt</button><button type="button" data-set="en">English</button></div></div>
 
-<section id="vi" lang="vi"><h2>Chính sách quyền riêng tư</h2>
+<section id="vi" class="vi" lang="vi"><h2>Chính sách quyền riêng tư</h2>
 <p class="meta">Có hiệu lực từ: 31/10/2026 · Nhà phát triển: Make It Wrong Studio · Liên hệ: <a href="mailto:makeitwrong.studio@gmail.com">makeitwrong.studio@gmail.com</a></p>
 <h3>1. Thông tin chúng tôi thu thập</h3>
 <p>Little Paws không bắt buộc tạo tài khoản và không hỏi tên, email, số điện thoại, danh bạ, ảnh hay vị trí của bạn. Tiến trình chơi (các bé mèo, paws, phòng, cài đặt) được lưu trên điện thoại của bạn. Chúng tôi không có máy chủ riêng và không nhận dữ liệu này.</p>
@@ -73,7 +78,7 @@ footer{color:var(--muted);font-size:.88rem;text-align:center;margin-top:34px}
 <h3>10. Liên hệ</h3>
 <p>Make It Wrong Studio · <a href="mailto:makeitwrong.studio@gmail.com">makeitwrong.studio@gmail.com</a></p></section>
 
-<section id="en" lang="en"><h2>Privacy Policy</h2>
+<section id="en" class="en" lang="en"><h2>Privacy Policy</h2>
 <p class="meta">Effective date: 31 October 2026 · Developer: Make It Wrong Studio · Contact: <a href="mailto:makeitwrong.studio@gmail.com">makeitwrong.studio@gmail.com</a></p>
 <h3>1. Information we collect</h3>
 <p>Little Paws does not require an account and does not ask for your name, email, phone number, contacts, photos or location. Your game progress (cats, paws, rooms, settings) is saved on your phone. We have no servers of our own and do not receive this data.</p>
@@ -104,4 +109,5 @@ footer{color:var(--muted);font-size:.88rem;text-align:center;margin-top:34px}
 <h3>10. Contact</h3>
 <p>Make It Wrong Studio · <a href="mailto:makeitwrong.studio@gmail.com">makeitwrong.studio@gmail.com</a></p></section>
 <footer>© 2026 Make It Wrong Studio</footer>
-</main></body></html>
+</main>
+<script>document.addEventListener('click',function(e){var b=e.target.closest('[data-set]');if(!b)return;var l=b.getAttribute('data-set'),d=document.documentElement;d.setAttribute('data-l',l);d.lang=l;try{localStorage.setItem('miw-lang',l)}catch(x){}});</script></body></html>

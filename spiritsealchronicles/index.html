@@ -1,80 +1,265 @@
 <!doctype html>
-<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="vi" data-l="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Spirit Seal Chronicles · Make It Wrong Studio</title>
-<meta name="description" content="Spirit Seal Chronicles (Linh Thú Ký): seal Spirit Beasts of the Five Elements in a bright turn-based fantasy RPG for Android. A game by Make It Wrong Studio.">
+<meta name="description" content="Spirit Seal Chronicles (Linh Thú Ký): seal Spirit Beasts of the Five Elements in a bright turn-based fantasy RPG for Android. Free to start, by Make It Wrong Studio.">
 <link rel="canonical" href="https://makeitwrong-studio.github.io/spiritsealchronicles/">
 <link rel="icon" href="icon.png">
+<meta property="og:title" content="Spirit Seal Chronicles (Linh Thú Ký)">
+<meta property="og:description" content="Seal Spirit Beasts of the Five Elements in a bright turn-based fantasy RPG. A game by Make It Wrong Studio.">
+<meta property="og:image" content="https://makeitwrong-studio.github.io/spiritsealchronicles/feature.jpg">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>(function(){var l;try{l=(localStorage.getItem('miw-lang')||localStorage.getItem('ss-lang'))}catch(e){}if(l!=='vi'&&l!=='en'){l=(navigator.language||'').toLowerCase().indexOf('vi')===0?'vi':'en'}document.documentElement.setAttribute('data-l',l);document.documentElement.lang=l})();</script>
 <style>
-:root{--bg:#fff7f0;--fg:#173041;--muted:#566f7a;--accent:#e2562f;--card:#fff;--line:#f0dccd;--pink:#e8578a}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0f2029;--fg:#e8f4f1;--muted:#a3bcc5;--accent:#ff8a5c;--card:#163240;--line:#2a4a58;--pink:#ff8fb1;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#0f2029;--fg:#e8f4f1;--muted:#a3bcc5;--accent:#ff8a5c;--card:#163240;--line:#2a4a58;--pink:#ff8fb1;color-scheme:dark}
+:root{--bg:#fff7f0;--fg:#173041;--muted:#566f7a;--accent:#e2562f;--card:#fff;--line:#f0dccd;--jade:#1f8a68;--soft:#ffeee2;--gold:#e3bd72}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0f2029;--fg:#e8f4f1;--muted:#a3bcc5;--accent:#ff8a5c;--card:#163240;--line:#2a4a58;--jade:#6fd6ad;--soft:#1b3a48;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f2029;--fg:#e8f4f1;--muted:#a3bcc5;--accent:#ff8a5c;--card:#163240;--line:#2a4a58;--jade:#6fd6ad;--soft:#1b3a48;color-scheme:dark}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:'Poppins',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.65;padding:0 max(16px,env(safe-area-inset-left))}
-main{max-width:720px;margin:0 auto;padding:28px 0 64px}
+img{max-width:100%;height:auto}
+html[data-l="vi"] .en,html[data-l="en"] .vi{display:none!important}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:'Poppins',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.65;padding:0 max(16px,env(safe-area-inset-left)) 0 max(16px,env(safe-area-inset-right))}
+main{max-width:960px;margin:0 auto;padding:24px 0 64px}
+a{color:var(--accent);font-weight:600}
 .top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .brand{display:inline-flex;align-items:center;background:#173041;color:#fff;border-radius:12px;padding:8px 14px;font-weight:700;letter-spacing:.08em;font-size:.9rem;text-decoration:none;line-height:1.2;box-shadow:0 0 0 1px rgba(255,255,255,.08)}
 .brand .r{display:inline-block;transform:scaleX(-1);color:#ff7a45}
-.back{font-size:.9rem;color:var(--accent);font-weight:600}
-.app{display:flex;align-items:center;gap:14px;margin:26px 0 14px}
-.app img{width:72px;height:72px;border-radius:18px;flex:none}
-h1{font-size:clamp(1.7rem,5vw,2.3rem);line-height:1.15;margin:0}
-.sub{color:var(--muted);font-size:.95rem}
-.hero{width:100%;border-radius:20px;display:block;margin:6px 0 4px}
-section{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:6px 22px 18px;margin:18px 0}
-h2{font-size:1.15rem;margin:16px 0 6px}
-h3{font-size:1rem;margin:18px 0 4px}
-p,li{margin:6px 0}
-ul{padding-left:1.2em}
-a{color:var(--accent);font-weight:600}
-.btns{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
-.btn{display:inline-block;padding:10px 18px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none}
-.btn.alt{background:transparent;color:var(--accent);border:2px solid var(--accent)}
-.btn.soon{background:transparent;color:var(--muted);border:2px dashed var(--line);font-weight:600}
-.meta{color:var(--muted);font-size:.9rem}
-.label{font-size:1.15rem;margin:34px 0 10px}
-.shots{display:grid;gap:16px;grid-template-columns:1fr}
-@media (min-width:600px){.shots{grid-template-columns:repeat(2,minmax(0,1fr))}}
-figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
-figure img{display:block;width:100%;height:auto;aspect-ratio:2/1;max-width:100%}
-figcaption{padding:10px 14px 12px;font-size:.92rem;line-height:1.45}
-figcaption b{display:block;font-weight:600}
-figcaption span{color:var(--muted);font-size:.86rem}
-.beasts{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr));margin:12px 0 28px}
-@media (min-width:600px){.beasts{grid-template-columns:repeat(5,minmax(0,1fr))}}
-.beast{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 8px 14px;text-align:center;position:relative;overflow:hidden;min-width:0}
+.back{font-size:.9rem}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--card)}
+.lang button{font:600 .8rem 'Poppins',sans-serif;border:0;background:none;color:var(--muted);padding:6px 12px;cursor:pointer}
+html[data-l="vi"] .lang [data-set="vi"],html[data-l="en"] .lang [data-set="en"]{background:var(--accent);color:#fff}
+.right{display:flex;gap:10px;align-items:center}
+.app{display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:center;margin:28px 0 18px}
+.app img{width:96px;height:96px;border-radius:22px;box-shadow:0 6px 18px rgba(23,48,65,.15)}
+h1{font-size:clamp(1.6rem,5vw,2.4rem);line-height:1.12;margin:0}
+.dev{color:var(--accent);font-weight:600;font-size:.95rem;margin-top:2px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.tag{font-size:.78rem;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--card)}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin:4px 0 22px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none}
+.btn svg{width:18px;height:18px}
+.btn.alt{background:transparent;color:var(--accent);border:2px solid var(--accent);padding:9px 18px}
+.btn.soon{background:transparent;color:var(--muted);border:2px dashed var(--line);padding:9px 18px;font-weight:600}
+.hero{width:100%;aspect-ratio:1024/500;border-radius:22px;display:block;object-fit:cover;box-shadow:0 10px 30px rgba(23,48,65,.12)}
+.lead{font-size:1.12rem;font-weight:600;margin:26px 0 6px;max-width:62ch;text-wrap:pretty}
+.intro{color:var(--muted);max-width:66ch;margin:0 0 8px}
+/* screenshot strip (landscape game) */
+.strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 10px;margin:22px 0 0;scrollbar-width:none;-ms-overflow-style:none}
+.strip::-webkit-scrollbar{display:none}
+.dots{display:flex;justify-content:center;gap:8px;margin:2px 0 10px}
+.dots button{width:8px;height:8px;padding:0;border:0;border-radius:999px;background:var(--line);cursor:pointer;transition:width .25s,background .25s}
+.dots button[aria-current="true"]{width:22px;background:var(--accent)}
+/* one wide slide (about two of the old ones) fills the row; only a corner of the next one shows */
+.strip button{flex:0 0 calc(100% - 12px - 48px);padding:0;border:0;background:none;cursor:zoom-in;scroll-snap-align:start;border-radius:14px}
+@media (max-width:560px){.strip button{flex-basis:calc(100% - 12px - 32px)}}
+.strip img{width:100%;aspect-ratio:2/1;border-radius:14px;display:block;box-shadow:0 4px 14px rgba(23,48,65,.14)}
+/* feature rows */
+h2.sec{font-size:clamp(1.2rem,3.4vw,1.55rem);margin:44px 0 6px}
+.feat{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:26px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:22px;margin:18px 0}
+.feat.flip{grid-template-columns:minmax(0,1fr) minmax(0,1.35fr)}
+.feat.flip .shot{order:2}
+.shot{width:100%;padding:0;border:0;background:none;cursor:zoom-in}
+.shot img{width:100%;aspect-ratio:2/1;border-radius:16px;display:block;box-shadow:0 8px 24px rgba(23,48,65,.16)}
+.kick{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--jade)}
+h3{font-size:1.25rem;line-height:1.25;margin:2px 0 8px}
+p.t{margin:0 0 6px}
+ul{margin:0;padding-left:1.15em}
+li{margin:5px 0}
+li::marker{color:var(--accent)}
+@media (max-width:700px){.feat,.feat.flip{grid-template-columns:1fr;gap:16px;padding:16px}.feat.flip .shot{order:0}}
+/* Nightremnant ink box */
+.ink{background:linear-gradient(135deg,#2b1640,#0f1420);color:#f1e9f7;border-radius:24px;padding:26px 24px;margin:18px 0;position:relative;overflow:hidden}
+.ink .kick{color:#c9a3ff}
+.ink li::marker{color:#c9a3ff}
+.ink ul{position:relative;max-width:60ch}
+.ink .drop{position:absolute;right:-10px;top:-20px;width:170px;opacity:.18}
+/* starters */
+.beasts{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));margin:14px 0 6px}
+.beast{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:12px 8px 14px;text-align:center;position:relative;overflow:hidden;min-width:0}
 .beast::before{content:"";position:absolute;left:50%;top:36%;width:150px;height:150px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,var(--c) 0%,transparent 68%);opacity:.35}
 .beast img{position:relative;display:block;height:110px;width:auto;max-width:100%;margin:0 auto 6px;object-fit:contain}
 .beast b{display:block;position:relative;font-size:.98rem}
 .beast small{display:block;position:relative;color:var(--muted)}
 .beast .el{position:relative;display:inline-block;margin-top:6px;padding:2px 10px;border-radius:999px;background:#173041;color:var(--c);font-weight:700;font-size:.78rem;white-space:nowrap}
-footer{color:var(--muted);font-size:.88rem;text-align:center;margin-top:34px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:14px;margin:18px 0}
+.box{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px 20px}
+.box h3{font-size:1.05rem}
+.note{background:var(--soft);border-radius:20px;padding:18px 20px;margin:18px 0}
+.note h3{font-size:1.05rem;margin-top:0}
+.note p{margin:0}
+.cta{text-align:center;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px 20px;margin:36px 0 0}
+.cta img{width:72px;height:72px;border-radius:18px}
+.cta h2{margin:10px 0 4px;font-size:1.3rem}
+.cta p{color:var(--muted);margin:0 0 16px}
+.cta .btns{justify-content:center;margin:0}
+footer{color:var(--muted);font-size:.88rem;text-align:center;margin-top:30px}
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:20;background:rgba(10,20,28,.9);display:flex;align-items:center;justify-content:center;padding:16px}
+.lb[hidden]{display:none}
+.lb img{max-width:min(100%,1280px);max-height:calc(100vh - 80px);border-radius:16px}
+.lb button{position:absolute;top:12px;right:14px;font:600 1rem 'Poppins',sans-serif;background:#fff;color:#173041;border:0;border-radius:999px;padding:6px 14px;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 </style>
 </head><body><main>
-<div class="top"><a class="back" href="../">← Make It Wrong Studio</a><a class="brand" href="../" aria-label="Make It Wrong Studio">MAKE IT W<span class="r">R</span>ONG</a></div>
-<div class="app"><img src="icon.png" alt="Spirit Seal Chronicles app icon"><div><h1>Spirit Seal Chronicles</h1><div class="sub">Linh Thú Ký · Make It Wrong Studio</div></div></div>
-<img class="hero" src="feature.jpg" alt="Spirit Seal Chronicles" width="1024" height="500" style="height:auto">
-<div class="btns"><span class="btn soon">Sắp ra mắt trên Google Play · Coming soon</span><a class="btn alt" href="privacy.html">Chính sách quyền riêng tư · Privacy Policy</a></div>
-<section lang="vi"><h2>Phong ấn · Đồng hành · Phiêu lưu</h2>
-<p>Trở thành Ấn Sư và bước vào Vạn Linh Giới, nơi Linh thú Ngũ Hành sống cùng con người. Chọn Linh thú đồng hành đầu tiên, phong ấn hàng trăm loài Linh thú (có loài chỉ xuất hiện về đêm), đấu theo lượt 3 đấu 3 với đội hình hàng trước, hàng sau và tận dụng Ngũ Hành tương khắc để lật ngược thế trận.</p>
-<p>Chương 1 đưa bạn qua vùng đất hệ Mộc: Làng Bến Sen, Thanh Diệp Thành, kinh đô Vạn Mộc Linh Đô, Đấu Trường và Lòng Rễ Đại Thụ. Tải miễn phí để chơi phần mở đầu, rồi mở khoá trọn bộ Chương 1 bằng một lần mua trong game. Không quảng cáo, không cần tài khoản, chơi ngoại tuyến sau khi tải nội dung.</p></section>
-<section lang="en"><h2>Seal · Bond · Adventure</h2>
-<p>Become a Seal Master and step into the Myriad Realm, where Spirit Beasts of the Five Elements live alongside people. Choose your first partner, seal hundreds of Spirit Beast species (some only appear at night), and fight turn-based 3 vs 3 battles with front and back rows, using the Five Elements to turn the tide.</p>
-<p>Chapter 1 takes you across the Wood region: Lotus Pier Village, Greenleaf City, the Myriad Wood Spirit Capital, the Arena and the roots of the Great Tree. Download free to play the opening, then unlock the full Chapter 1 with a single in-game purchase. No ads, no account, and offline play once your content is downloaded.</p></section>
-<h2 class="label">Hình ảnh trong game · Screenshots</h2>
-<div class="shots">
-<figure><img src="img/shot_01.jpg" alt="Enter the Myriad Realm and seal Spirit Beasts" width="1280" height="640" loading="lazy"><figcaption><b lang="vi">Bước vào Vạn Linh Giới, phong ấn Linh thú Ngũ Hành</b><span lang="en">Enter the Myriad Realm and seal Spirit Beasts</span></figcaption></figure>
-<figure><img src="img/shot_02.jpg" alt="Choose your first partner Spirit Beast" width="1280" height="640" loading="lazy"><figcaption><b lang="vi">Chọn Linh thú đồng hành đầu tiên</b><span lang="en">Choose your first partner Spirit Beast</span></figcaption></figure>
-<figure><img src="img/shot_03.jpg" alt="Dazzling legendary skills" width="1280" height="640" loading="lazy"><figcaption><b lang="vi">Kỹ năng huyền thoại rực rỡ</b><span lang="en">Dazzling legendary skills</span></figcaption></figure>
-<figure><img src="img/shot_04.jpg" alt="Turn-based battles with front and back rows" width="1280" height="640" loading="lazy"><figcaption><b lang="vi">Đấu theo lượt, xếp đội hình trước – sau</b><span lang="en">Turn-based battles with front and back rows</span></figcaption></figure>
-<figure><img src="img/shot_05.jpg" alt="Explore the Myriad Wood Spirit Capital" width="1280" height="640" loading="lazy"><figcaption><b lang="vi">Khám phá Vạn Mộc Linh Đô</b><span lang="en">Explore the Myriad Wood Spirit Capital</span></figcaption></figure>
-<figure><img src="img/shot_06.jpg" alt="Cleanse the ink-tainted Sylvan Treesoul" width="1280" height="640" loading="lazy"><figcaption><b lang="vi">Thanh tẩy Thụ Linh nhiễm mực</b><span lang="en">Cleanse the ink-tainted Sylvan Treesoul</span></figcaption></figure>
-<figure><img src="img/shot_07.jpg" alt="A world that lives from day to night" width="1280" height="640" loading="lazy"><figcaption><b lang="vi">Thế giới chuyển mình theo ngày đêm</b><span lang="en">A world that lives from day to night</span></figcaption></figure>
-<figure><img src="img/shot_08.jpg" alt="Prove yourself in the Myriad Wood Arena" width="1280" height="640" loading="lazy"><figcaption><b lang="vi">Thử tài ở Đấu Trường Vạn Mộc</b><span lang="en">Prove yourself in the Myriad Wood Arena</span></figcaption></figure>
+<div class="top"><a class="back" href="../">← Make It Wrong Studio</a>
+<div class="right"><div class="lang" role="group" aria-label="Language"><button type="button" data-set="vi">Tiếng Việt</button><button type="button" data-set="en">English</button></div>
+<a class="brand" href="../" aria-label="Make It Wrong Studio">MAKE IT W<span class="r">R</span>ONG</a></div></div>
+
+<div class="app"><img src="icon.png" alt="Spirit Seal Chronicles app icon" width="96" height="96">
+<div><h1><span class="vi">Linh Thú Ký: Spirit Seal</span><span class="en">Spirit Seal Chronicles</span></h1>
+<div class="dev">Make It Wrong Studio</div>
+<div class="tags"><span class="tag">Android</span><span class="tag vi">Bắt đầu miễn phí</span><span class="tag en">Free to start</span><span class="tag vi">Có mua trong ứng dụng</span><span class="tag en">In-app purchase</span><span class="tag vi">Không quảng cáo</span><span class="tag en">No ads</span><span class="tag vi">Chơi ngoại tuyến</span><span class="tag en">Offline play</span></div></div></div>
+
+<div class="btns"><span class="btn soon"><span class="vi">Sắp ra mắt trên Google Play</span><span class="en">Coming soon to Google Play</span></span>
+<a class="btn alt" href="privacy.html"><span class="vi">Chính sách quyền riêng tư</span><span class="en">Privacy Policy</span></a></div>
+
+<img class="hero" src="feature.jpg" alt="Spirit Seal Chronicles · Linh Thú Ký" width="1024" height="500">
+
+<p class="lead vi">Thuần phục Linh thú Ngũ Hành trong cuộc phiêu lưu nhập vai đánh theo lượt!</p>
+<p class="lead en">Tame Spirit Beasts of the Five Elements in a bright turn-based fantasy RPG!</p>
+<p class="intro vi">Trở thành Ấn Sư và bước vào Vạn Linh Giới, một thế giới tươi sáng nơi Linh thú muôn hình vạn trạng sống cùng con người. Tỉnh dậy sau một giấc mơ kỳ lạ ở phòng nghiên cứu của Sư phụ Kim Quy, bạn bắt đầu hành trình xuyên vùng đất hệ Mộc để tìm ra sự thật về thứ mực đen đang lan khắp nơi.</p>
+<p class="intro en">Become a Seal Master and set out across the Myriad Realm, a bright world where Spirit Beasts of every shape and kind live alongside people. You wake from a strange dream in the lab of Master Kim Quy, and a journey across the Wood lands begins, to uncover the truth about the black ink spreading everywhere.</p>
+
+<div class="strip vi" aria-label="Ảnh màn hình">
+<button type="button" data-zoom="img/shot1_vi.jpg"><img src="img/shot1_vi.jpg" alt="Bước vào Vạn Linh Giới" loading="lazy" width="1280" height="640"></button>
+<button type="button" data-zoom="img/shot2_vi.jpg"><img src="img/shot2_vi.jpg" alt="Chọn Linh thú đồng hành đầu tiên" loading="lazy" width="1280" height="640"></button>
+<button type="button" data-zoom="img/shot3_vi.jpg"><img src="img/shot3_vi.jpg" alt="Kỹ năng huyền thoại rực rỡ" loading="lazy" width="1280" height="640"></button>
+<button type="button" data-zoom="img/shot4_vi.jpg"><img src="img/shot4_vi.jpg" alt="Đấu theo lượt, đội hình trước – sau" loading="lazy" width="1280" height="640"></button>
+<button type="button" data-zoom="img/shot5_vi.jpg"><img src="img/shot5_vi.jpg" alt="Khám phá Vạn Mộc Linh Đô" loading="lazy" width="1280" height="640"></button>
+<button type="button" data-zoom="img/shot6_vi.jpg"><img src="img/shot6_vi.jpg" alt="Thanh tẩy Thụ Linh nhiễm mực" loading="lazy" width="1280" height="640"></button>
+<button type="button" data-zoom="img/shot7_vi.jpg"><img src="img/shot7_vi.jpg" alt="Thế giới chuyển mình theo ngày đêm" loading="lazy" width="1280" height="640"></button>
+<button type="button" data-zoom="img/shot8_vi.jpg"><img src="img/shot8_vi.jpg" alt="Thử tài ở Đấu Trường Vạn Mộc" loading="lazy" width="1280" height="640"></button>
 </div>
-<h2 class="label">Linh thú khởi đầu · Starter Spirit Beasts</h2>
-<p class="meta">Năm lá Linh Phù, năm người bạn đầu tiên, mỗi bé một hệ Ngũ Hành. · Five talismans, five first partners, one for each element.</p>
-<div class="beasts"><div class="beast" style="--c:#5fcf72"><img src="img/beast_sproutfawn.png" alt="Sproutfawn" loading="lazy"><b>Lộc Non</b><small>Sproutfawn</small><span class="el">Mộc · Wood</span></div><div class="beast" style="--c:#ff8a3d"><img src="img/beast_cinderowl.png" alt="Cinderowl" loading="lazy"><b>Cú Than</b><small>Cinderowl</small><span class="el">Hỏa · Fire</span></div><div class="beast" style="--c:#4fb8f0"><img src="img/beast_tidepup.png" alt="Tidepup" loading="lazy"><b>Rái Cá Sóng</b><small>Tidepup</small><span class="el">Thủy · Water</span></div><div class="beast" style="--c:#d9a441"><img src="img/beast_claytusk.png" alt="Claytusk" loading="lazy"><b>Voi Đất Sét</b><small>Claytusk</small><span class="el">Thổ · Earth</span></div><div class="beast" style="--c:#cfd8e3"><img src="img/beast_silverpup.png" alt="Silverpup" loading="lazy"><b>Sói Bạc</b><small>Silverpup</small><span class="el">Kim · Metal</span></div></div>
-<p class="meta">Liên hệ / Contact: <a href="mailto:makeitwrong.studio@gmail.com">makeitwrong.studio@gmail.com</a></p>
-<footer>© 2026 Make It Wrong Studio</footer>
-</main></body></html>
+<div class="strip en" aria-label="Screenshots">
+<button type="button" data-zoom="img/shot1_en.jpg"><img src="img/shot1_en.jpg" alt="Enter the Myriad Realm" loading="lazy" width="1280" height="640"></button>
+<button type="button" data-zoom="img/shot2_en.jpg"><img src="img/shot2_en.jpg" alt="Choose your first partner Spirit Beast" loading="lazy" width="1280" height="640"></button>
+<button type="button" data-zoom="img/shot3_en.jpg"><img src="img/shot3_en.jpg" alt="Dazzling legendary skills" loading="lazy" width="1280" height="640"></button>
+<button type="button" data-zoom="img/shot4_en.jpg"><img src="img/shot4_en.jpg" alt="Turn-based battles with front and back rows" loading="lazy" width="1280" height="640"></button>
+<button type="button" data-zoom="img/shot5_en.jpg"><img src="img/shot5_en.jpg" alt="Explore the Myriad Wood Spirit Capital" loading="lazy" width="1280" height="640"></button>
+<button type="button" data-zoom="img/shot6_en.jpg"><img src="img/shot6_en.jpg" alt="Cleanse the ink-tainted Sylvan Treesoul" loading="lazy" width="1280" height="640"></button>
+<button type="button" data-zoom="img/shot7_en.jpg"><img src="img/shot7_en.jpg" alt="A world that lives from day to night" loading="lazy" width="1280" height="640"></button>
+<button type="button" data-zoom="img/shot8_en.jpg"><img src="img/shot8_en.jpg" alt="Prove yourself in the Myriad Wood Arena" loading="lazy" width="1280" height="640"></button>
+</div>
+<div class="dots" id="dots" role="group" aria-label="Slides"></div>
+
+<h2 class="sec"><span class="vi">Có gì trong Linh Thú Ký</span><span class="en">What's inside</span></h2>
+
+<div class="feat"><button type="button" class="shot" data-zoom-l="3"><img class="vi" src="img/shot3_vi.jpg" alt="Sư phụ Kim Quy hoá rùa thần" loading="lazy" width="1280" height="640"><img class="en" src="img/shot3_en.jpg" alt="Master Kim Quy as the Golden Tortoise" loading="lazy" width="1280" height="640"></button>
+<div><div class="kick vi">Cốt truyện</div><div class="kick en">Story</div>
+<h3 class="vi">Giấc mơ, Sư phụ và nhóm Tàn Dạ</h3><h3 class="en">A dream, a master and the Nightremnant</h3>
+<ul class="vi"><li>Chọn Hỏa Tâm hoặc Thủy Tâm và đặt tên nhân vật theo ý bạn</li><li>Sư phụ Kim Quy, rùa thần hóa thân thành người, dạy bạn những bước đầu của Ấn Sư</li><li>Vừa ra tới bìa rừng, Quạ, kẻ đeo mặt nạ của nhóm Tàn Dạ, đã phục kích bạn</li></ul>
+<ul class="en"><li>Choose your hero, Fireheart or Tideheart, and give them your own name</li><li>Master Kim Quy, a wise turtle spirit in human form, teaches you your first steps as a Seal Master</li><li>At the edge of the forest, Crow, a masked member of the Nightremnant, ambushes you</li></ul></div></div>
+
+<div class="feat flip"><button type="button" class="shot" data-zoom-l="5"><img class="vi" src="img/shot5_vi.jpg" alt="Vạn Mộc Linh Đô" loading="lazy" width="1280" height="640"><img class="en" src="img/shot5_en.jpg" alt="Myriad Wood Spirit Capital" loading="lazy" width="1280" height="640"></button>
+<div><div class="kick vi">Chương 1</div><div class="kick en">Chapter 1</div>
+<h3 class="vi">Vùng đất hệ Mộc</h3><h3 class="en">The Wood lands</h3>
+<ul class="vi"><li>Một chuỗi nhiệm vụ cốt truyện trọn vẹn cùng nhiều nhiệm vụ phụ không bao giờ hết hạn</li><li>Băng qua đồng cỏ lộng gió, rừng trúc sương, vách thác mây, khe suối đom đóm, đầm lau trắng và đại lộ cổ thụ</li><li>Ghé Làng Bến Sen, Làng Chè Mây, Làng Hoa Gạo, Thanh Diệp Thành và kinh đô Vạn Mộc Linh Đô</li></ul>
+<ul class="en"><li>A complete story quest line plus many side quests that never expire</li><li>Cross Windswept Meadow, Misty Bamboo Grove, Cloudfall Cliffs, Firefly Creek, White Reed Marsh and Ancient Tree Avenue</li><li>Visit Lotus Pier Village, Cloud Tea Village, Kapok Blossom Village, Greenleaf City and the Myriad Wood Spirit Capital</li></ul></div></div>
+
+<div class="feat"><button type="button" class="shot" data-zoom-l="4"><img class="vi" src="img/shot4_vi.jpg" alt="Trận đấu 3 đấu 3" loading="lazy" width="1280" height="640"><img class="en" src="img/shot4_en.jpg" alt="A 3 vs 3 battle" loading="lazy" width="1280" height="640"></button>
+<div><div class="kick vi">Chiến đấu</div><div class="kick en">Battle</div>
+<h3 class="vi">Đấu theo lượt 3 đấu 3</h3><h3 class="en">Turn-based 3 vs 3 battles</h3>
+<ul class="vi"><li>Ra lệnh cho cả đội rồi xem các Linh thú cùng hành động</li><li>Xếp đội hình hàng trước, hàng sau ngay trong menu Đội</li><li>Mỗi Linh thú thuộc hệ Mộc, Hỏa, Thủy, Thổ, Kim hoặc hệ Vô: tận dụng Ngũ Hành tương khắc để giành lợi thế</li><li>Linh thú mở thêm ô kỹ năng sau mỗi lần tiến hóa, với nhiều kỹ năng đặc biệt độc đáo</li></ul>
+<ul class="en"><li>Give orders to your whole team, then watch them act together</li><li>Set your front and back rows right in the Team menu</li><li>Every Spirit Beast is Wood, Fire, Water, Earth, Metal or Neutral: use element counters to gain the upper hand</li><li>Spirit Beasts unlock more skill slots each time they evolve, with many unique special skills</li></ul></div></div>
+
+<div class="feat flip"><button type="button" class="shot" data-zoom-l="2"><img class="vi" src="img/shot2_vi.jpg" alt="Chọn Linh thú khởi đầu" loading="lazy" width="1280" height="640"><img class="en" src="img/shot2_en.jpg" alt="Choose your partner" loading="lazy" width="1280" height="640"></button>
+<div><div class="kick vi">Phong ấn</div><div class="kick en">Seal</div>
+<h3 class="vi">Phong ấn và nuôi dưỡng</h3><h3 class="en">Seal and raise</h3>
+<ul class="vi"><li>Hàng trăm loài Linh thú, có loài chỉ xuất hiện khi đêm xuống</li><li>Làm Linh thú hoang suy yếu rồi phong ấn bằng Linh Phù, hồi hộp chờ lá bùa rung lắc giằng co!</li><li>Mỗi Linh thú tiến hóa ở một cấp riêng, không ai đoán trước được</li><li>Sổ Linh thú ghi lại mọi loài bạn đã gặp và đã phong ấn</li></ul>
+<ul class="en"><li>Hundreds of Spirit Beast species, some that only appear at night</li><li>Weaken wild Spirit Beasts and seal them with talismans, then hold your breath as the talisman shakes and struggles!</li><li>Every Spirit Beast evolves at its own level, so no two journeys are the same</li><li>The Beast Book records every species you have met and sealed</li></ul></div></div>
+
+<div class="feat"><button type="button" class="shot" data-zoom-l="7"><img class="vi" src="img/shot7_vi.jpg" alt="Làng Bến Sen về đêm" loading="lazy" width="1280" height="640"><img class="en" src="img/shot7_en.jpg" alt="Lotus Pier Village at night" loading="lazy" width="1280" height="640"></button>
+<div><div class="kick vi">Thế giới</div><div class="kick en">World</div>
+<h3 class="vi">Thế giới sống động</h3><h3 class="en">A living world</h3>
+<ul class="vi"><li>Ngày và đêm đổi theo giờ trong game, đường phố và Đại Thụ phát sáng khi đêm xuống</li><li>Mua bán đan dược và Linh Phù ở cửa hàng, nghỉ ở nhà trọ để hồi sức</li><li>Mỗi trận thắng mang về Đồng Ấn</li></ul>
+<ul class="en"><li>Day turns to night with the in-game clock, and the streets and the Great Tree glow after dark</li><li>Buy and sell pills and talismans at shops, and rest at inns</li><li>Every victory earns Seal Coins</li></ul></div></div>
+
+<div class="feat flip"><button type="button" class="shot" data-zoom-l="8"><img class="vi" src="img/shot8_vi.jpg" alt="Đấu Trường Vạn Mộc" loading="lazy" width="1280" height="640"><img class="en" src="img/shot8_en.jpg" alt="Myriad Wood Arena" loading="lazy" width="1280" height="640"></button>
+<div><div class="kick vi">Thử thách</div><div class="kick en">Challenge</div>
+<h3 class="vi">Lên bậc Ấn Sư</h3><h3 class="en">Rise through the ranks</h3>
+<ul class="vi"><li>Thách đấu Ấn Sư khắp nơi và chinh phục Đấu Trường</li><li>Lên bậc Ấn Sư và thắp sáng Ngũ Linh Ấn</li><li>Tiến vào Lòng Rễ Đại Thụ để đối mặt với trận chiến cuối chương</li></ul>
+<ul class="en"><li>Challenge Seal Masters everywhere and conquer the Arena</li><li>Rise through the Seal Master ranks and light up the Five Spirit Seal</li><li>Enter the Great Tree Roots for the chapter's final battle</li></ul></div></div>
+
+<div class="ink"><svg class="drop" viewBox="0 0 100 100" aria-hidden="true" fill="#c9a3ff"><path d="M50 6C40 30 22 46 22 64a28 28 0 0 0 56 0C78 46 60 30 50 6z"/></svg>
+<div class="kick vi">Cảnh báo</div><div class="kick en">Beware</div>
+<h3 class="vi">Linh thú nhiễm mực của Tàn Dạ</h3><h3 class="en">The Nightremnant's ink-tainted beasts</h3>
+<ul class="vi"><li>Thứ mực đen đang lan khắp vùng đất hệ Mộc, biến Linh thú hiền lành thành đối thủ đáng sợ</li><li>Linh thú nhiễm mực mạnh hơn hẳn bình thường: chuẩn bị đội hình thật kỹ trước khi giao chiến</li><li>Thanh tẩy cả những Thụ Linh khổng lồ đang bị mực đen nuốt chửng</li></ul>
+<ul class="en"><li>Black ink is spreading across the Wood lands, turning gentle Spirit Beasts into fearsome foes</li><li>Ink-tainted beasts are far stronger than usual: plan your team carefully before you fight</li><li>Cleanse even the giant Treesouls swallowed by the black ink</li></ul></div>
+
+<h2 class="sec"><span class="vi">Linh thú khởi đầu</span><span class="en">Starter Spirit Beasts</span></h2>
+<p class="intro vi">Năm lá Linh Phù, năm người bạn đầu tiên, mỗi bé một hệ Ngũ Hành. Bạn sẽ mở lá nào?</p>
+<p class="intro en">Five talismans, five first partners, one for each element. Which one will you open?</p>
+<div class="beasts">
+<div class="beast" style="--c:#5fcf72"><img src="img/beast_sproutfawn.png" alt="Sproutfawn" loading="lazy"><b class="vi">Lộc Non</b><b class="en">Sproutfawn</b><span class="el vi">Mộc</span><span class="el en">Wood</span></div>
+<div class="beast" style="--c:#ff8a3d"><img src="img/beast_cinderowl.png" alt="Cinderowl" loading="lazy"><b class="vi">Cú Than</b><b class="en">Cinderowl</b><span class="el vi">Hỏa</span><span class="el en">Fire</span></div>
+<div class="beast" style="--c:#4fb8f0"><img src="img/beast_tidepup.png" alt="Tidepup" loading="lazy"><b class="vi">Rái Cá Sóng</b><b class="en">Tidepup</b><span class="el vi">Thủy</span><span class="el en">Water</span></div>
+<div class="beast" style="--c:#d9a441"><img src="img/beast_claytusk.png" alt="Claytusk" loading="lazy"><b class="vi">Voi Đất Sét</b><b class="en">Claytusk</b><span class="el vi">Thổ</span><span class="el en">Earth</span></div>
+<div class="beast" style="--c:#cfd8e3"><img src="img/beast_silverpup.png" alt="Silverpup" loading="lazy"><b class="vi">Sói Bạc</b><b class="en">Silverpup</b><span class="el vi">Kim</span><span class="el en">Metal</span></div>
+</div>
+
+<div class="grid">
+<div class="box"><h3 class="vi">Bắt đầu miễn phí</h3><h3 class="en">Free to start</h3>
+<ul class="vi"><li>Tải về miễn phí và chơi phần mở đầu cuộc phiêu lưu</li><li>Mở khoá trọn bộ Chương 1 bằng một lần mua trong game</li><li>Không gói tháng, không quảng cáo</li></ul>
+<ul class="en"><li>Download free and play the opening of the adventure</li><li>Unlock the full Chapter 1 with a single in-game purchase</li><li>No subscriptions, no ads</li></ul></div>
+<div class="box"><h3 class="vi">Chơi thư thái</h3><h3 class="en">Relaxed play</h3>
+<ul class="vi"><li>Hình ảnh phong cách anime tươi sáng, nhạc nền sáng tác riêng</li><li>Chơi ngoại tuyến sau khi đã tải nội dung</li><li>Không cần tài khoản</li></ul>
+<ul class="en"><li>Bright anime-style art and an original soundtrack</li><li>Play offline once your content is downloaded</li><li>No account required</li></ul></div>
+<div class="box"><h3 class="vi">Ngôn ngữ và lưu</h3><h3 class="en">Language and saves</h3>
+<ul class="vi"><li>Đầy đủ tiếng Việt và tiếng Anh, tự theo ngôn ngữ của máy, đổi được bất cứ lúc nào trong Cài đặt</li><li>Tiến trình được lưu ngay trên thiết bị của bạn</li></ul>
+<ul class="en"><li>Full Vietnamese and English text that follows your device language, switchable any time in Settings</li><li>Your progress is saved on your device</li></ul></div>
+</div>
+
+<div class="note"><h3 class="vi">Trọn bộ Chương 1</h3><h3 class="en">Full Chapter 1</h3>
+<p class="vi">Linh Thú Ký bắt đầu miễn phí. Khi muốn đi tiếp, bạn mở khoá trọn bộ Chương 1 bằng một lần mua qua Google Play; nội dung chương được tải về một lần (cần mạng), sau đó chơi ngoại tuyến. Game không có quảng cáo.</p>
+<p class="en">Spirit Seal Chronicles is free to start. To continue the story, unlock the full Chapter 1 with one purchase through Google Play; the chapter is downloaded once (internet needed), then plays offline. The game has no ads.</p></div>
+
+<div class="cta"><img src="icon.png" alt="" width="72" height="72">
+<h2 class="vi">Hành trình Ấn Sư sắp bắt đầu</h2><h2 class="en">Your Seal Master journey is coming</h2>
+<p class="vi">Sắp ra mắt trên Google Play cho Android</p><p class="en">Coming soon to Google Play for Android</p>
+<div class="btns"><span class="btn soon"><span class="vi">Sắp ra mắt trên Google Play</span><span class="en">Coming soon to Google Play</span></span></div></div>
+
+<footer><span class="vi">Góp ý và hỗ trợ</span><span class="en">Feedback and support</span>: <a href="mailto:makeitwrong.studio@gmail.com">makeitwrong.studio@gmail.com</a> · <a href="privacy.html"><span class="vi">Chính sách quyền riêng tư</span><span class="en">Privacy Policy</span></a><br>© 2026 Make It Wrong Studio</footer>
+</main>
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Screenshot"><img id="lbimg" alt=""><button type="button" id="lbx">✕</button></div>
+<script>
+(function(){
+var d=document.documentElement,lb=document.getElementById('lb'),li=document.getElementById('lbimg');
+function setL(l){d.setAttribute('data-l',l);d.lang=l;try{localStorage.setItem('miw-lang',l);localStorage.setItem('ss-lang',l)}catch(e){}slider.reset();}
+function close(){lb.hidden=true;li.removeAttribute('src');}
+document.addEventListener('click',function(e){
+  var b=e.target.closest('[data-set]');if(b){setL(b.getAttribute('data-set'));return;}
+  var z=e.target.closest('[data-zoom],[data-zoom-l]');
+  if(z){var src=z.getAttribute('data-zoom')||('img/shot'+z.getAttribute('data-zoom-l')+'_'+d.getAttribute('data-l')+'.jpg');
+    li.src=src;var im=z.querySelector('img.'+d.getAttribute('data-l'))||z.querySelector('img');li.alt=(im&&im.alt)||'';lb.hidden=false;document.getElementById('lbx').focus();return;}
+  if(e.target.id==='lbx'||e.target===lb)close();
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden)close();});
+// auto slider: next screenshot every 3.5 s, loops, pauses on hover / touch / focus / lightbox / off-screen, off for reduced motion
+var slider=(function(){
+  var dots=document.getElementById('dots'),timer=null,hold=0,seen=true,DELAY=3500;
+  var reduce=false;try{reduce=matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){}
+  function strip(){return document.querySelector('.strip.'+d.getAttribute('data-l'))}
+  function items(){var s=strip();return s?[].slice.call(s.children):[]}
+  function index(){var s=strip(),it=items(),best=0,dist=1e9;if(!s)return 0;
+    it.forEach(function(b,i){var x=Math.abs(b.offsetLeft-s.offsetLeft-s.scrollLeft);if(x<dist){dist=x;best=i}});return best}
+  function atEnd(){var s=strip();return s&&s.scrollLeft>=s.scrollWidth-s.clientWidth-2}
+  function go(i){var s=strip(),it=items();if(!s||!it.length)return;i=(i+it.length)%it.length;
+    var x=Math.min(it[i].offsetLeft-s.offsetLeft,s.scrollWidth-s.clientWidth);
+    s.scrollTo({left:x,behavior:reduce?'auto':'smooth'})}
+  function paint(){var k=atEnd()?items().length-1:index();[].forEach.call(dots.children,function(b,i){b.setAttribute('aria-current',i===k?'true':'false')})}
+  function build(){dots.innerHTML='';items().forEach(function(b,i){var t=document.createElement('button');t.type='button';
+    t.setAttribute('aria-label',(d.getAttribute('data-l')==='vi'?'Ảnh ':'Slide ')+(i+1));t.onclick=function(){go(i);pause(6000)};dots.appendChild(t)});paint()}
+  function tick(){if(hold>Date.now()||!seen||!lb.hidden||document.hidden)return;go(atEnd()?0:index()+1)}
+  function pause(ms){hold=Date.now()+(ms||6000)}
+  document.querySelectorAll('.strip').forEach(function(s){
+    s.addEventListener('scroll',paint,{passive:true});
+    s.addEventListener('pointerenter',function(e){if(e.pointerType==='mouse')pause(1e9)});
+    s.addEventListener('pointerleave',function(e){if(e.pointerType==='mouse')pause(1500)});
+    ['pointerdown','wheel','touchstart','focusin'].forEach(function(ev){s.addEventListener(ev,function(){pause(8000)},{passive:true})});
+  });
+  try{new IntersectionObserver(function(es){seen=es[0].isIntersecting},{threshold:0}).observe(dots)}catch(e){}
+  function reset(){var s=strip();if(s)s.scrollLeft=0;build()}
+  build();if(!reduce)timer=setInterval(tick,DELAY);
+  return {reset:reset};
+})();
+})();
+</script>
+</body></html>
