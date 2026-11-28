@@ -4,7 +4,7 @@
 <meta name="description" content="Inside Quiet Window: lo-fi, jazzhop, chillhop, city pop and winter jazz albums, each one a single moment of the day seen through the same window with Nori and her cat Miso. A YouTube music channel by Make It Wrong Studio.">
 <link rel="canonical" href="https://makeitwrong-studio.github.io/inside-quiet-window/">
 <link rel="icon" href="icon.png">
-<script>(function(){var l;try{l=localStorage.getItem('lp-lang')}catch(e){}if(l!=='vi'&&l!=='en'){l=(navigator.language||'').toLowerCase().indexOf('vi')===0?'vi':'en'}document.documentElement.setAttribute('data-l',l);document.documentElement.lang=l})();</script>
+<script>(function(){var l;try{l=(localStorage.getItem('miw-lang')||localStorage.getItem('lp-lang'))}catch(e){}if(l!=='vi'&&l!=='en'){l=(navigator.language||'').toLowerCase().indexOf('vi')===0?'vi':'en'}document.documentElement.setAttribute('data-l',l);document.documentElement.lang=l})();</script>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#101a2a;--fg:#f2e8d8;--muted:#a9b3c2;--accent:#e7b66f;--card:#172336;--line:#2a3a52;color-scheme:dark}
@@ -50,6 +50,47 @@ html[data-l="vi"] .en,html[data-l="en"] .vi{display:none!important}
 .lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--card)}
 .lang button{font:600 .8rem 'Poppins',sans-serif;border:0;background:none;color:var(--muted);padding:6px 12px;cursor:pointer}
 html[data-l="vi"] .lang [data-set="vi"],html[data-l="en"] .lang [data-set="en"]{background:var(--accent);color:#1a1206}
+/* ep-cards v1 */
+.epf{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 14px}
+.epf button{font:600 .8rem 'Poppins',sans-serif;border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:999px;padding:5px 12px;cursor:pointer}
+.epf button[aria-pressed="true"]{background:var(--ep-a);border-color:var(--ep-a);color:var(--ep-bf)}
+.epl{list-style:none;margin:0 0 4px;padding:0;display:grid;gap:14px}
+.epl[data-f="live"] .epc:not([data-s="live"]),.epl[data-f="sched"] .epc:not([data-s="sched"]),.epl[data-f="soon"] .epc:not([data-s="soon"]){display:none}
+.epc{display:grid;grid-template-columns:200px minmax(0,1fr);gap:16px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin:0}
+.epc .thumb{position:relative;display:block;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:var(--ep-t);border:1px solid var(--line);align-self:start}
+.epc .thumb img.full{width:100%;height:100%;object-fit:cover;display:block}
+.epc .thumb img.face{position:absolute;inset:0;margin:auto;height:86%;width:auto;aspect-ratio:1;border-radius:50%;object-fit:cover;border:3px solid var(--card);z-index:2}
+.epc .thumb .sp{position:absolute;font-size:.9rem;line-height:1;z-index:1}
+.epc .thumb .play{position:absolute;right:8px;bottom:8px;width:30px;height:30px;border-radius:50%;background:rgba(0,0,0,.6);color:#fff;display:grid;place-items:center;font-size:.8rem;z-index:3}
+.epc .thumb.ph{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-weight:600;font-size:.82rem;text-align:center}
+.epc .thumb.ph>*{position:relative;z-index:2}.epc .thumb.ph .sp{position:absolute;z-index:1}
+.epc .eggi{font-size:1.7rem;line-height:1}
+.epc .eptop{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
+.epc .num{font-weight:700;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ep-n)}
+.epc .epst{font-size:.75rem;font-weight:600;border-radius:999px;padding:1px 10px;border:1px solid;white-space:nowrap}
+.epc .epst-live{color:var(--ep-l);border-color:var(--ep-l)}.epc .epst-live::before{content:"● "}
+.epc .epst-date{color:var(--ep-bf);background:var(--ep-a);border-color:var(--ep-a)}
+.epc .epst-soon{color:var(--muted);border-style:dashed;border-color:var(--muted)}
+.epc .epst-new{color:#fff;background:#e2562f;border-color:#e2562f}
+.epc h3{margin:4px 0 2px;font-size:1.05rem;line-height:1.35}
+.epc .chips{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0}
+.epc .chip{display:inline-flex;align-items:center;gap:5px;font-size:.78rem;font-weight:500;color:var(--muted);background:var(--bg);border-radius:8px;padding:1px 8px}
+.epc .chip img{width:auto;height:12px;border-radius:2px}
+.epc p{margin:4px 0;font-size:.93rem}
+.epc .extra{margin:8px 0 2px;font-size:.86rem;color:var(--muted)}
+.epc .extra>b{display:block;color:var(--fg);font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
+.epc .extra ul{margin:0;padding-left:1.1em}.epc .extra li{margin:1px 0}
+.epc .extra ul.refs{list-style:none;padding-left:0}
+.epc .extra a{color:var(--ep-a)}
+.epc .act{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px}
+.epc .btn{display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:.85rem;border-radius:999px;padding:6px 16px;text-decoration:none;border:2px solid var(--ep-a);margin:0}
+.epc .btn.main{background:var(--ep-a);color:var(--ep-bf)}
+.epc .btn.alt{background:transparent;color:var(--ep-a)}
+.epc .btn:hover{filter:brightness(1.08)}
+.yt{flex:none;vertical-align:-2px}.yt rect{fill:#FF0000}.yt path{fill:#fff}.yt.w rect{fill:#fff}.yt.w path{fill:#FF0000}
+@media (max-width:560px){.epc{grid-template-columns:1fr;gap:10px;padding:12px}}
+:root{--ep-a:var(--accent);--ep-bf:#1a1206;--ep-n:var(--accent);--ep-l:#8fd6b0;--ep-t:#1b2a40}
+.btn .yt{margin-right:7px}
 </style></head><body><main>
 <div class="top"><a class="back" href="../">← Make It Wrong Studio</a>
 <div class="right"><div class="lang" role="group" aria-label="Language"><button type="button" data-set="vi">Tiếng Việt</button><button type="button" data-set="en">English</button></div>
@@ -60,7 +101,7 @@ html[data-l="vi"] .lang [data-set="vi"],html[data-l="en"] .lang [data-set="en"]{
 <img class="hero" src="hero.jpg" alt="A cozy room on a rainy night: Nori with her cat by a big window, string lights, a cat-shaped lamp and the city glowing outside" width="1440" height="600">
 <p class="slogan"><b>🌙</b> <span class="en">A little light in the quiet.</span><span class="vi">Một chút ánh sáng giữa khoảng lặng.</span></p>
 
-<div class="btns"><a class="btn" href="https://www.youtube.com/@InsideQuietWindow" target="_blank" rel="noopener"><span class="vi">Nghe trên YouTube</span><span class="en">Listen on YouTube</span></a><a class="btn alt" href="https://www.youtube.com/@InsideQuietWindow?sub_confirmation=1" target="_blank" rel="noopener"><span class="vi">Đăng ký kênh</span><span class="en">Subscribe</span></a></div>
+<div class="btns"><a class="btn" href="https://www.youtube.com/@InsideQuietWindow" target="_blank" rel="noopener"><svg class="yt w" viewBox="0 0 28 20" width="21" height="15" aria-hidden="true"><rect width="28" height="20" rx="5"/><path d="M11 5.5v9l8-4.5z"/></svg><span class="vi">Nghe trên YouTube</span><span class="en">Listen on YouTube</span></a><a class="btn alt" href="https://www.youtube.com/@InsideQuietWindow?sub_confirmation=1" target="_blank" rel="noopener"><span class="vi">Đăng ký kênh</span><span class="en">Subscribe</span></a></div>
 
 <section><h2><span class="vi">Về kênh</span><span class="en">About the channel</span></h2>
 <div class="en"><p>Every album here is one moment of the day, seen through the same window: rain in the middle of the night, deep focus in the late morning, lunch in the midday sun, the first snow in the evening. Behind the glass live Nori and her sleepy cat Miso. You're welcome to sit with them for a while.</p>
@@ -73,51 +114,63 @@ html[data-l="vi"] .lang [data-set="vi"],html[data-l="en"] .lang [data-set="en"]{
 <p>☕ Ấm áp nhé. 🌧️ Cứ thong thả. 🌙 Nơi này luôn chào đón bạn.</p></div></section>
 
 <section><h2><span class="vi">Các album</span><span class="en">Albums</span></h2>
-<ul class="albums">
-<li><img src="img/a1.jpg" alt="Album 01 · 2:17 AM" width="640" height="360" loading="lazy">
-<div class="ab"><div class="ah"><b>2:17 AM</b><span class="no">Album 01 · 43:24</span></div>
-<p class="tl"><span class="en">A long rainy night, and someone is still awake.</span><span class="vi">Đêm mưa dài, vẫn còn một người thức.</span></p>
-<p class="ds"><span class="en">Mellow late-night lo-fi and soft jazzhop for rain on the glass and thoughts that won't sleep.</span><span class="vi">Lo-fi đêm khuya và jazzhop dịu nhẹ, cho tiếng mưa trên kính và những suy nghĩ chưa chịu ngủ.</span></p><a class="tag watch" href="https://youtu.be/_NlfGBsVVmk" target="_blank" rel="noopener">▶ <span class="vi">Xem trên YouTube</span><span class="en">Watch on YouTube</span></a></div></li>
-<li><img src="img/a2.jpg" alt="Album 02 · 5:42 AM" width="640" height="360" loading="lazy">
-<div class="ab"><div class="ah"><b>5:42 AM</b><span class="no">Album 02 · 44:14</span></div>
-<p class="tl"><span class="en">The hour before the world wakes.</span><span class="vi">Một giờ trước khi thế giới thức dậy.</span></p>
-<p class="ds"><span class="en">Warm piano and quiet beats for the blue hour before sunrise, coffee and an empty street.</span><span class="vi">Piano ấm và nhịp nhẹ cho giờ xanh trước bình minh, tách cà phê và con phố vắng.</span></p><a class="tag watch" href="https://youtu.be/IPyCAH-lLt0" target="_blank" rel="noopener">▶ <span class="vi">Xem trên YouTube</span><span class="en">Watch on YouTube</span></a></div></li>
-<li><img src="img/a3.jpg" alt="Album 03 · 4:18 PM" width="640" height="360" loading="lazy">
-<div class="ab"><div class="ah"><b>4:18 PM</b><span class="no">Album 03 · 43:53</span></div>
-<p class="tl"><span class="en">A little pause in the middle of everything.</span><span class="vi">Một khoảng nghỉ nhỏ giữa mọi thứ.</span></p>
-<p class="ds"><span class="en">Golden-hour chillhop for a slow afternoon break by the window.</span><span class="vi">Chillhop giờ vàng cho một buổi chiều nghỉ ngơi bên cửa sổ.</span></p><a class="tag watch" href="https://youtu.be/8KDygJA48i0" target="_blank" rel="noopener">▶ <span class="vi">Xem trên YouTube</span><span class="en">Watch on YouTube</span></a></div></li>
-<li><img src="img/a4.jpg" alt="Album 04 · 6:38 PM" width="640" height="360" loading="lazy">
-<div class="ab"><div class="ah"><b>6:38 PM</b><span class="no">Album 04 · 50:46</span></div>
-<p class="tl"><span class="en">The day is over. You're home now.</span><span class="vi">Một ngày đã qua. Bạn về nhà rồi.</span></p>
-<p class="ds"><span class="en">Cozy evening lo-fi for coming home, dinner on the stove and lights switching on across the city.</span><span class="vi">Lo-fi buổi tối ấm áp cho lúc về nhà, nồi cơm trên bếp và đèn thành phố lần lượt bật.</span></p><a class="tag watch" href="https://youtu.be/uBfefgp3pOA" target="_blank" rel="noopener">▶ <span class="vi">Xem trên YouTube</span><span class="en">Watch on YouTube</span></a></div></li>
-<li><img src="img/a5.jpg" alt="Album 05 · 11:51 PM" width="640" height="360" loading="lazy">
-<div class="ab"><div class="ah"><b>11:51 PM</b><span class="no">Album 05 · 50:39</span></div>
-<p class="tl"><span class="en">Nine minutes before tomorrow.</span><span class="vi">Chín phút trước ngày mai.</span></p>
-<p class="ds"><span class="en">Soft late-night lo-fi for quiet thoughts, journaling and the last minutes of the day.</span><span class="vi">Lo-fi đêm khuya nhẹ nhàng cho suy nghĩ lặng lẽ, viết nhật ký và những phút cuối ngày.</span></p><a class="tag watch" href="https://youtu.be/OHEjMSzPm3s" target="_blank" rel="noopener">▶ <span class="vi">Xem trên YouTube</span><span class="en">Watch on YouTube</span></a></div></li>
-<li><img src="img/a6.jpg" alt="Album 06 · 8:24 AM" width="640" height="360" loading="lazy">
-<div class="ab"><div class="ah"><b>8:24 AM</b><span class="no">Album 06 · 51:24</span></div>
-<p class="tl"><span class="en">A slow morning before the day begins.</span><span class="vi">Một buổi sáng chậm rãi trước khi ngày mới bắt đầu.</span></p>
-<p class="ds"><span class="en">Sunny jazzhop and warm keys for breakfast, a cat at the window and nowhere to rush.</span><span class="vi">Jazzhop nắng sớm và phím đàn ấm cho bữa sáng, chú mèo bên cửa sổ và chẳng cần vội.</span></p><a class="tag watch" href="https://youtu.be/mZ-dH1dSOq4" target="_blank" rel="noopener">▶ <span class="vi">Xem trên YouTube</span><span class="en">Watch on YouTube</span></a></div></li>
-<li><img src="img/a7.jpg" alt="Album 07 · 1:36 PM" width="640" height="360" loading="lazy">
-<div class="ab"><div class="ah"><b>1:36 PM</b><span class="no">Album 07 · 50:38</span></div>
-<p class="tl"><span class="en">A rainy Sunday with nowhere to be.</span><span class="vi">Một Chủ nhật mưa, chẳng phải đi đâu.</span></p>
-<p class="ds"><span class="en">Rainy-day lo-fi for soup on low heat, laundry, a nap on the couch and puddles catching light.</span><span class="vi">Lo-fi ngày mưa cho nồi canh liu riu, giặt đồ, giấc ngủ trưa trên sofa và vũng nước bắt nắng.</span></p><a class="tag watch" href="https://youtu.be/WSUDvStoM_4" target="_blank" rel="noopener">▶ <span class="vi">Xem trên YouTube</span><span class="en">Watch on YouTube</span></a></div></li>
-<li><img src="img/a8.jpg" alt="Album 08 · 9:13 PM" width="640" height="360" loading="lazy">
-<div class="ab"><div class="ah"><b>9:13 PM</b><span class="no">Album 08 · 50:39</span></div>
-<p class="tl"><span class="en">The day is done; the night is yours.</span><span class="vi">Ngày đã xong, đêm là của bạn.</span></p>
-<p class="ds"><span class="en">Soft piano lo-fi for winding down, reading in bed and sleep.</span><span class="vi">Lo-fi piano nhẹ để thư giãn, đọc sách trên giường và đi ngủ.</span></p><a class="tag watch" href="https://youtu.be/kQUC6Py0ZDI" target="_blank" rel="noopener">▶ <span class="vi">Xem trên YouTube</span><span class="en">Watch on YouTube</span></a></div></li>
-<li><img src="img/a9.jpg" alt="Album 09 · 10:47 AM" width="640" height="360" loading="lazy">
-<div class="ab"><div class="ah"><b>10:47 AM</b><span class="no">Album 09 · 47:35</span></div>
-<p class="tl"><span class="en">Deep focus, soft light.</span><span class="vi">Tập trung sâu, ánh sáng dịu.</span></p>
-<p class="ds"><span class="en">Chillhop study beats for a calm, productive late morning: one thing at a time.</span><span class="vi">Chillhop học bài cho một buổi sáng tập trung, yên ả: làm từng việc một.</span></p><span class="tag soon"><span class="vi">Sắp ra mắt</span><span class="en">Coming soon</span></span></div></li>
-<li><img src="img/a10.jpg" alt="Album 10 · 12:34 PM" width="640" height="360" loading="lazy">
-<div class="ab"><div class="ah"><b>12:34 PM</b><span class="no">Album 10 · 44:24</span></div>
-<p class="tl"><span class="en">Lunch in the sun, nowhere else to be.</span><span class="vi">Bữa trưa dưới nắng, chẳng cần đi đâu.</span></p>
-<p class="ds"><span class="en">Bright city pop lo-fi for a rooftop lunch, garden chores and a nap in the hammock.</span><span class="vi">Lo-fi city pop tươi sáng cho bữa trưa sân thượng, chăm vườn và giấc ngủ trên võng.</span></p><span class="tag soon"><span class="vi">Sắp ra mắt</span><span class="en">Coming soon</span></span></div></li>
-<li><img src="img/a11.jpg" alt="Album 11 · 7:15 PM" width="640" height="360" loading="lazy">
-<div class="ab"><div class="ah"><b>7:15 PM</b><span class="no">Album 11 · 53:23</span></div>
-<p class="tl"><span class="en">The first snow of the year.</span><span class="vi">Tuyết đầu mùa.</span></p>
-<p class="ds"><span class="en">Winter jazz lo-fi for the first snowfall, hot chocolate and string lights.</span><span class="vi">Lo-fi jazz mùa đông cho trận tuyết đầu mùa, sô-cô-la nóng và dây đèn lấp lánh.</span></p><span class="tag soon"><span class="vi">Sắp ra mắt</span><span class="en">Coming soon</span></span></div></li>
+<div class="epf" role="group" aria-label="Lọc / Filter"><button type="button" data-f="all" aria-pressed="true"><span class="vi">Tất cả</span><span class="en">All</span> <b>11</b></button><button type="button" data-f="live" aria-pressed="false"><span class="vi">Đã ra mắt</span><span class="en">Out now</span> <b>8</b></button><button type="button" data-f="soon" aria-pressed="false"><span class="vi">Sắp ra mắt</span><span class="en">Coming soon</span> <b>3</b></button></div>
+<ul class="epl" data-f="all">
+<li class="epc" data-s="live"><a class="thumb" href="https://youtu.be/_NlfGBsVVmk" target="_blank" rel="noopener" aria-label="Listen to Album 01"><img class="full" src="img/a1.jpg" alt="Album 01 · 2:17 AM" width="640" height="360" loading="lazy"><span class="play" aria-hidden="true">▶</span></a><div class="epx">
+<div class="eptop"><span class="num">Album 01</span><span class="epst epst-live"><span class="vi">Đã ra mắt</span><span class="en">Out now</span></span></div>
+<h3><span class="vi">2:17 AM · Đêm mưa dài, vẫn còn một người thức.</span><span class="en">2:17 AM · A long rainy night, and someone is still awake.</span></h3><div class="chips"><span class="chip">⏱ 43:24</span></div>
+<p class="vi">Lo-fi đêm khuya và jazzhop dịu nhẹ, cho tiếng mưa trên kính và những suy nghĩ chưa chịu ngủ.</p><p class="en">Mellow late-night lo-fi and soft jazzhop for rain on the glass and thoughts that won't sleep.</p>
+<div class="act"><a class="btn main" href="https://youtu.be/_NlfGBsVVmk" target="_blank" rel="noopener"><svg class="yt w" viewBox="0 0 28 20" width="21" height="15" aria-hidden="true"><rect width="28" height="20" rx="5"/><path d="M11 5.5v9l8-4.5z"/></svg><span class="vi">Nghe album 01</span><span class="en">Listen to album 01</span></a></div></div></li>
+<li class="epc" data-s="live"><a class="thumb" href="https://youtu.be/IPyCAH-lLt0" target="_blank" rel="noopener" aria-label="Listen to Album 02"><img class="full" src="img/a2.jpg" alt="Album 02 · 5:42 AM" width="640" height="360" loading="lazy"><span class="play" aria-hidden="true">▶</span></a><div class="epx">
+<div class="eptop"><span class="num">Album 02</span><span class="epst epst-live"><span class="vi">Đã ra mắt</span><span class="en">Out now</span></span></div>
+<h3><span class="vi">5:42 AM · Một giờ trước khi thế giới thức dậy.</span><span class="en">5:42 AM · The hour before the world wakes.</span></h3><div class="chips"><span class="chip">⏱ 44:14</span></div>
+<p class="vi">Piano ấm và nhịp nhẹ cho giờ xanh trước bình minh, tách cà phê và con phố vắng.</p><p class="en">Warm piano and quiet beats for the blue hour before sunrise, coffee and an empty street.</p>
+<div class="act"><a class="btn main" href="https://youtu.be/IPyCAH-lLt0" target="_blank" rel="noopener"><svg class="yt w" viewBox="0 0 28 20" width="21" height="15" aria-hidden="true"><rect width="28" height="20" rx="5"/><path d="M11 5.5v9l8-4.5z"/></svg><span class="vi">Nghe album 02</span><span class="en">Listen to album 02</span></a></div></div></li>
+<li class="epc" data-s="live"><a class="thumb" href="https://youtu.be/8KDygJA48i0" target="_blank" rel="noopener" aria-label="Listen to Album 03"><img class="full" src="img/a3.jpg" alt="Album 03 · 4:18 PM" width="640" height="360" loading="lazy"><span class="play" aria-hidden="true">▶</span></a><div class="epx">
+<div class="eptop"><span class="num">Album 03</span><span class="epst epst-live"><span class="vi">Đã ra mắt</span><span class="en">Out now</span></span></div>
+<h3><span class="vi">4:18 PM · Một khoảng nghỉ nhỏ giữa mọi thứ.</span><span class="en">4:18 PM · A little pause in the middle of everything.</span></h3><div class="chips"><span class="chip">⏱ 43:53</span></div>
+<p class="vi">Chillhop giờ vàng cho một buổi chiều nghỉ ngơi bên cửa sổ.</p><p class="en">Golden-hour chillhop for a slow afternoon break by the window.</p>
+<div class="act"><a class="btn main" href="https://youtu.be/8KDygJA48i0" target="_blank" rel="noopener"><svg class="yt w" viewBox="0 0 28 20" width="21" height="15" aria-hidden="true"><rect width="28" height="20" rx="5"/><path d="M11 5.5v9l8-4.5z"/></svg><span class="vi">Nghe album 03</span><span class="en">Listen to album 03</span></a></div></div></li>
+<li class="epc" data-s="live"><a class="thumb" href="https://youtu.be/uBfefgp3pOA" target="_blank" rel="noopener" aria-label="Listen to Album 04"><img class="full" src="img/a4.jpg" alt="Album 04 · 6:38 PM" width="640" height="360" loading="lazy"><span class="play" aria-hidden="true">▶</span></a><div class="epx">
+<div class="eptop"><span class="num">Album 04</span><span class="epst epst-live"><span class="vi">Đã ra mắt</span><span class="en">Out now</span></span></div>
+<h3><span class="vi">6:38 PM · Một ngày đã qua. Bạn về nhà rồi.</span><span class="en">6:38 PM · The day is over. You're home now.</span></h3><div class="chips"><span class="chip">⏱ 50:46</span></div>
+<p class="vi">Lo-fi buổi tối ấm áp cho lúc về nhà, nồi cơm trên bếp và đèn thành phố lần lượt bật.</p><p class="en">Cozy evening lo-fi for coming home, dinner on the stove and lights switching on across the city.</p>
+<div class="act"><a class="btn main" href="https://youtu.be/uBfefgp3pOA" target="_blank" rel="noopener"><svg class="yt w" viewBox="0 0 28 20" width="21" height="15" aria-hidden="true"><rect width="28" height="20" rx="5"/><path d="M11 5.5v9l8-4.5z"/></svg><span class="vi">Nghe album 04</span><span class="en">Listen to album 04</span></a></div></div></li>
+<li class="epc" data-s="live"><a class="thumb" href="https://youtu.be/OHEjMSzPm3s" target="_blank" rel="noopener" aria-label="Listen to Album 05"><img class="full" src="img/a5.jpg" alt="Album 05 · 11:51 PM" width="640" height="360" loading="lazy"><span class="play" aria-hidden="true">▶</span></a><div class="epx">
+<div class="eptop"><span class="num">Album 05</span><span class="epst epst-live"><span class="vi">Đã ra mắt</span><span class="en">Out now</span></span></div>
+<h3><span class="vi">11:51 PM · Chín phút trước ngày mai.</span><span class="en">11:51 PM · Nine minutes before tomorrow.</span></h3><div class="chips"><span class="chip">⏱ 50:39</span></div>
+<p class="vi">Lo-fi đêm khuya nhẹ nhàng cho suy nghĩ lặng lẽ, viết nhật ký và những phút cuối ngày.</p><p class="en">Soft late-night lo-fi for quiet thoughts, journaling and the last minutes of the day.</p>
+<div class="act"><a class="btn main" href="https://youtu.be/OHEjMSzPm3s" target="_blank" rel="noopener"><svg class="yt w" viewBox="0 0 28 20" width="21" height="15" aria-hidden="true"><rect width="28" height="20" rx="5"/><path d="M11 5.5v9l8-4.5z"/></svg><span class="vi">Nghe album 05</span><span class="en">Listen to album 05</span></a></div></div></li>
+<li class="epc" data-s="live"><a class="thumb" href="https://youtu.be/mZ-dH1dSOq4" target="_blank" rel="noopener" aria-label="Listen to Album 06"><img class="full" src="img/a6.jpg" alt="Album 06 · 8:24 AM" width="640" height="360" loading="lazy"><span class="play" aria-hidden="true">▶</span></a><div class="epx">
+<div class="eptop"><span class="num">Album 06</span><span class="epst epst-live"><span class="vi">Đã ra mắt</span><span class="en">Out now</span></span></div>
+<h3><span class="vi">8:24 AM · Một buổi sáng chậm rãi trước khi ngày mới bắt đầu.</span><span class="en">8:24 AM · A slow morning before the day begins.</span></h3><div class="chips"><span class="chip">⏱ 51:24</span></div>
+<p class="vi">Jazzhop nắng sớm và phím đàn ấm cho bữa sáng, chú mèo bên cửa sổ và chẳng cần vội.</p><p class="en">Sunny jazzhop and warm keys for breakfast, a cat at the window and nowhere to rush.</p>
+<div class="act"><a class="btn main" href="https://youtu.be/mZ-dH1dSOq4" target="_blank" rel="noopener"><svg class="yt w" viewBox="0 0 28 20" width="21" height="15" aria-hidden="true"><rect width="28" height="20" rx="5"/><path d="M11 5.5v9l8-4.5z"/></svg><span class="vi">Nghe album 06</span><span class="en">Listen to album 06</span></a></div></div></li>
+<li class="epc" data-s="live"><a class="thumb" href="https://youtu.be/WSUDvStoM_4" target="_blank" rel="noopener" aria-label="Listen to Album 07"><img class="full" src="img/a7.jpg" alt="Album 07 · 1:36 PM" width="640" height="360" loading="lazy"><span class="play" aria-hidden="true">▶</span></a><div class="epx">
+<div class="eptop"><span class="num">Album 07</span><span class="epst epst-live"><span class="vi">Đã ra mắt</span><span class="en">Out now</span></span></div>
+<h3><span class="vi">1:36 PM · Một Chủ nhật mưa, chẳng phải đi đâu.</span><span class="en">1:36 PM · A rainy Sunday with nowhere to be.</span></h3><div class="chips"><span class="chip">⏱ 50:38</span></div>
+<p class="vi">Lo-fi ngày mưa cho nồi canh liu riu, giặt đồ, giấc ngủ trưa trên sofa và vũng nước bắt nắng.</p><p class="en">Rainy-day lo-fi for soup on low heat, laundry, a nap on the couch and puddles catching light.</p>
+<div class="act"><a class="btn main" href="https://youtu.be/WSUDvStoM_4" target="_blank" rel="noopener"><svg class="yt w" viewBox="0 0 28 20" width="21" height="15" aria-hidden="true"><rect width="28" height="20" rx="5"/><path d="M11 5.5v9l8-4.5z"/></svg><span class="vi">Nghe album 07</span><span class="en">Listen to album 07</span></a></div></div></li>
+<li class="epc" data-s="live"><a class="thumb" href="https://youtu.be/kQUC6Py0ZDI" target="_blank" rel="noopener" aria-label="Listen to Album 08"><img class="full" src="img/a8.jpg" alt="Album 08 · 9:13 PM" width="640" height="360" loading="lazy"><span class="play" aria-hidden="true">▶</span></a><div class="epx">
+<div class="eptop"><span class="num">Album 08</span><span class="epst epst-live"><span class="vi">Đã ra mắt</span><span class="en">Out now</span></span><span class="epst epst-new"><span class="vi">Mới</span><span class="en">New</span></span></div>
+<h3><span class="vi">9:13 PM · Ngày đã xong, đêm là của bạn.</span><span class="en">9:13 PM · The day is done; the night is yours.</span></h3><div class="chips"><span class="chip">⏱ 50:39</span></div>
+<p class="vi">Lo-fi piano nhẹ để thư giãn, đọc sách trên giường và đi ngủ.</p><p class="en">Soft piano lo-fi for winding down, reading in bed and sleep.</p>
+<div class="act"><a class="btn main" href="https://youtu.be/kQUC6Py0ZDI" target="_blank" rel="noopener"><svg class="yt w" viewBox="0 0 28 20" width="21" height="15" aria-hidden="true"><rect width="28" height="20" rx="5"/><path d="M11 5.5v9l8-4.5z"/></svg><span class="vi">Nghe album 08</span><span class="en">Listen to album 08</span></a></div></div></li>
+<li class="epc" data-s="soon"><div class="thumb"><img class="full" src="img/a9.jpg" alt="Album 09 · 10:47 AM" width="640" height="360" loading="lazy"></div><div class="epx">
+<div class="eptop"><span class="num">Album 09</span><span class="epst epst-soon"><span class="vi">Sắp ra mắt</span><span class="en">Coming soon</span></span></div>
+<h3><span class="vi">10:47 AM · Tập trung sâu, ánh sáng dịu.</span><span class="en">10:47 AM · Deep focus, soft light.</span></h3><div class="chips"><span class="chip">⏱ 47:35</span></div>
+<p class="vi">Chillhop học bài cho một buổi sáng tập trung, yên ả: làm từng việc một.</p><p class="en">Chillhop study beats for a calm, productive late morning: one thing at a time.</p>
+<div class="act"><a class="btn alt" href="https://www.youtube.com/@InsideQuietWindow?sub_confirmation=1" target="_blank" rel="noopener">🔔 <span class="vi">Đăng ký để không bỏ lỡ</span><span class="en">Subscribe so you don't miss it</span></a></div></div></li>
+<li class="epc" data-s="soon"><div class="thumb"><img class="full" src="img/a10.jpg" alt="Album 10 · 12:34 PM" width="640" height="360" loading="lazy"></div><div class="epx">
+<div class="eptop"><span class="num">Album 10</span><span class="epst epst-soon"><span class="vi">Sắp ra mắt</span><span class="en">Coming soon</span></span></div>
+<h3><span class="vi">12:34 PM · Bữa trưa dưới nắng, chẳng cần đi đâu.</span><span class="en">12:34 PM · Lunch in the sun, nowhere else to be.</span></h3><div class="chips"><span class="chip">⏱ 44:24</span></div>
+<p class="vi">Lo-fi city pop tươi sáng cho bữa trưa sân thượng, chăm vườn và giấc ngủ trên võng.</p><p class="en">Bright city pop lo-fi for a rooftop lunch, garden chores and a nap in the hammock.</p>
+<div class="act"><a class="btn alt" href="https://www.youtube.com/@InsideQuietWindow?sub_confirmation=1" target="_blank" rel="noopener">🔔 <span class="vi">Đăng ký để không bỏ lỡ</span><span class="en">Subscribe so you don't miss it</span></a></div></div></li>
+<li class="epc" data-s="soon"><div class="thumb"><img class="full" src="img/a11.jpg" alt="Album 11 · 7:15 PM" width="640" height="360" loading="lazy"></div><div class="epx">
+<div class="eptop"><span class="num">Album 11</span><span class="epst epst-soon"><span class="vi">Sắp ra mắt</span><span class="en">Coming soon</span></span></div>
+<h3><span class="vi">7:15 PM · Tuyết đầu mùa.</span><span class="en">7:15 PM · The first snow of the year.</span></h3><div class="chips"><span class="chip">⏱ 53:23</span></div>
+<p class="vi">Lo-fi jazz mùa đông cho trận tuyết đầu mùa, sô-cô-la nóng và dây đèn lấp lánh.</p><p class="en">Winter jazz lo-fi for the first snowfall, hot chocolate and string lights.</p>
+<div class="act"><a class="btn alt" href="https://www.youtube.com/@InsideQuietWindow?sub_confirmation=1" target="_blank" rel="noopener">🔔 <span class="vi">Đăng ký để không bỏ lỡ</span><span class="en">Subscribe so you don't miss it</span></a></div></div></li>
 </ul></section>
 
 <section><h2><span class="vi">Cách chúng tôi làm</span><span class="en">How we make it</span></h2>
@@ -126,5 +179,6 @@ html[data-l="vi"] .lang [data-set="vi"],html[data-l="en"] .lang [data-set="en"]{
 
 <footer>© Make It Wrong Studio · <a href="mailto:makeitwrong.studio@gmail.com">makeitwrong.studio@gmail.com</a></footer>
 </main>
-<script>document.addEventListener('click',function(e){var b=e.target.closest('[data-set]');if(!b)return;var l=b.getAttribute('data-set'),d=document.documentElement;d.setAttribute('data-l',l);d.lang=l;try{localStorage.setItem('lp-lang',l);localStorage.setItem('miw-lang',l)}catch(x){}});</script>
+<script>document.addEventListener('click',function(e){var b=e.target.closest('[data-set]');if(!b)return;var l=b.getAttribute('data-set'),d=document.documentElement;d.setAttribute('data-l',l);d.lang=l;try{localStorage.setItem('miw-lang',l);localStorage.setItem('lp-lang',l)}catch(x){}});</script>
+<script>/* ep-cards filter */document.addEventListener('click',function(e){var b=e.target.closest('.epf [data-f]');if(!b)return;var g=b.parentNode,l=g.nextElementSibling;l.setAttribute('data-f',b.getAttribute('data-f'));g.querySelectorAll('[data-f]').forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});});</script>
 </body></html>
